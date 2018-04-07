@@ -2,12 +2,13 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import static locators.LoginPageLoc.*;
 
 public class LoginPage extends Page {
 
-   private boolean login = false;
+    private boolean login = false;
 
 
     public LoginPage(WebDriver driver) {
@@ -27,12 +28,21 @@ public class LoginPage extends Page {
 
     }
 
-    public boolean login() {
+    public boolean login() throws NotLoggedInException {
 
-        driver.findElement(By.id(LOGIN.getLocator())).sendKeys("gregoryk");
-        driver.findElement(By.id(PASSWORD.getLocator())).sendKeys("gregory82");
+        if (driver.getTitle().contains("PowerSteering")) {
+            // Enter login
+            driver.findElement(By.id(LOGIN.getLocator())).sendKeys("gregoryk");
+            // Enter password
+            driver.findElement(By.id(PASSWORD.getLocator())).sendKeys("gregory82");
+            // Click on Entering button
+            driver.findElement(By.xpath(LOGIN_BTN.getLocator())).click();
+        }
 
-
-        return login;
+        if (driver.getTitle().contains("Home")) {
+            return true;
+        } else {
+            throw new NotLoggedInException("Login Failed");
+        }
     }
 }

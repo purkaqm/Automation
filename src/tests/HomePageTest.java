@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.LoginPage;
 import pages.IndexPage;
+import pages.NotLoggedInException;
 
 import java.util.concurrent.TimeUnit;
 
@@ -34,10 +35,9 @@ public class HomePageTest {
     }
 
     @Test
-    public void testLogin() {
+    public void testLogin() throws NotLoggedInException {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login();
-
+        Assert.assertTrue(loginPage.login());
     }
 
     @Test

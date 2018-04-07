@@ -1,7 +1,10 @@
 package locators;
 
 public enum LoginPageLoc implements LocatorAble {
-    LOGIN("loginField"), PASSWORD("passwordField");
+    LOGIN("loginField"), PASSWORD("passwordField"), LOGIN_BTN("//input[@class=\"signInButton\"]")
+
+
+    ;
 
     LoginPageLoc(String locator) {
         this.locator = locator;
