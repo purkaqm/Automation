@@ -1,7 +1,7 @@
 package locators;
 
 public enum IndexPageLoc implements LocatorAble {
-    MAIN_URL("file:///C:/Dev/Projects/Automation/index.html"),
+    MAIN_URL(""),
     BUTTON("Button01");
 
     IndexPageLoc(String locator) {

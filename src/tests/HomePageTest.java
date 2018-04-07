@@ -11,7 +11,7 @@ import pages.IndexPage;
 
 import java.util.concurrent.TimeUnit;
 
-import static locators.IndexPageLoc.*;
+import static locators.CommonLoc.*;
 
 public class HomePageTest {
 
@@ -24,7 +24,7 @@ public class HomePageTest {
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get(MAIN_URL.getLocator());
+        driver.get(CONTEXT_URL.getLocator());
 
     }
 
@@ -34,7 +34,7 @@ public class HomePageTest {
     }
 
     @Test
-    public void testSearch() {
+    public void testLogin() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login();
 
@@ -42,7 +42,7 @@ public class HomePageTest {
 
     @Test
     public void testIndexPage() throws TitleNotFoundException {
-        IndexPage page = new IndexPage(driver, MAIN_URL.getLocator());
+        IndexPage page = new IndexPage(driver, CONTEXT_URL.getLocator());
         page.openPage();
 
         System.out.println("Current page title --- " + page.pageTitle());
