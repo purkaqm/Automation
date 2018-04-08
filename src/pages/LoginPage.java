@@ -24,18 +24,18 @@ public class LoginPage extends Page {
     }
 
     @Override
-    public boolean openPage() {
+    public boolean pageIsOpened() {
         return true;
 
     }
 
-    public boolean login() throws NotLoggedInException {
+    public boolean login(String login, String password) throws NotLoggedInException {
 
         if (driver.getTitle().contains("PowerSteering")) {
             // Enter login
-            driver.findElement(By.id(LOGIN.getLocator())).sendKeys("gregoryk");
+            driver.findElement(By.id(LOGIN.getLocator())).sendKeys(login);
             // Enter password
-            driver.findElement(By.id(PASSWORD.getLocator())).sendKeys("gregory82");
+            driver.findElement(By.id(PASSWORD.getLocator())).sendKeys(password);
             // Click on Entering button
             driver.findElement(By.xpath(LOGIN_BTN.getLocator())).click();
         }

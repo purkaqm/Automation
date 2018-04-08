@@ -9,6 +9,6 @@ public class LoginPageTest extends PageTest {
 
     @Test
     public void testLogin() throws NotLoggedInException {
-        Assert.assertTrue(new LoginPage(driver).login());
+        Assert.assertTrue(new LoginPage(driver).login("gregoryk","gregory82"));
     }
 }

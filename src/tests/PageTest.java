@@ -3,12 +3,19 @@ package tests;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.LoginPage;
+import pages.exception.NotLoggedInException;
 
 import java.util.concurrent.TimeUnit;
 
 import static locators.CommonLoc.*;
 
 public class PageTest {
+
+    void login(String login, String password) throws NotLoggedInException {
+        new LoginPage(driver).login(login,password);
+    }
+
 
     ChromeDriver driver;
 
@@ -23,6 +30,9 @@ public class PageTest {
         // Время ожидания элемента
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        // Открываем контекст
+
         driver.get(CONTEXT_URL.getLocator());
     }
 

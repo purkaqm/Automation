@@ -10,22 +10,15 @@ public class HomePage extends Page {
         super(driver);
     }
 
-    public String getTitle() {
-        return "Home page is NOT loaded";
-    }
-
     @Override
     public String pageTitle() {
         return driver.getTitle();
     }
 
     @Override
-    public boolean openPage() throws NotLoggedInException {
+    public boolean pageIsOpened() throws NotLoggedInException {
+        driver.get(HOME_PAGE_URL.getLocator());
 
-
-        if (new LoginPage(driver).login()) {
-            driver.get(HOME_PAGE_URL.getLocator());
-        }
-        return true;
+        return driver.getTitle().contains("Home");
     }
 }
