@@ -1,8 +1,10 @@
 package pages;
 
+import pages.exception.NotLoggedInException;
+
 public interface PageObject {
 
     String pageTitle();
 
-    void openPage();
+    boolean openPage() throws NotLoggedInException;
 }

@@ -3,12 +3,14 @@ package pages;
 import org.openqa.selenium.WebDriver;
 
 
- abstract class Page implements PageObject {
+abstract class Page implements PageObject {
 
-     WebDriver driver;
+    WebDriver driver;
+
 
     Page(WebDriver driver) {
         this.driver = driver;
+
 
     }
 

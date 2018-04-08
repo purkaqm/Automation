@@ -2,7 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import pages.exception.NotLoggedInException;
 
 import static locators.LoginPageLoc.*;
 
@@ -24,7 +24,8 @@ public class LoginPage extends Page {
     }
 
     @Override
-    public void openPage() {
+    public boolean openPage() {
+        return true;
 
     }
 

@@ -1,6 +1,9 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
+import pages.exception.NotLoggedInException;
+
+import static locators.HomePageLoc.*;
 
 public class HomePage extends Page {
     public HomePage(WebDriver driver) {
@@ -8,16 +11,21 @@ public class HomePage extends Page {
     }
 
     public String getTitle() {
-        return "Element is not found";
+        return "Home page is NOT loaded";
     }
 
     @Override
     public String pageTitle() {
-        return null;
+        return driver.getTitle();
     }
 
     @Override
-    public void openPage() {
+    public boolean openPage() throws NotLoggedInException {
 
+
+        if (new LoginPage(driver).login()) {
+            driver.get(HOME_PAGE_URL.getLocator());
+        }
+        return true;
     }
 }
