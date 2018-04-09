@@ -2,7 +2,7 @@ package tests;
 
 import org.junit.Assert;
 import org.junit.Test;
-import pages.PortfolioPage;
+import pages.portfolio.PortfolioPage;
 import pages.exception.NotLoggedInException;
 
 public class PortfolioPageTest extends PageTest {

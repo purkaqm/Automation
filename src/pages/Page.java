@@ -4,14 +4,14 @@ import org.openqa.selenium.WebDriver;
 
 import static locators.CommonLoc.*;
 
-abstract class Page implements PageObject {
+abstract public class Page implements PageObject {
 
-    String context = CONTEXT_URL.getLocator();
+    protected String context = CONTEXT_URL.getLocator();
 
-    WebDriver driver;
+    protected WebDriver driver;
 
 
-    Page(WebDriver driver) {
+    public Page(WebDriver driver) {
         this.driver = driver;
 
 
