@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.Page;
 
-import static locators.PortfolioPageLoc.*;
+import static locators.portfolios.PortfolioPageLoc.*;
 
 public class PortfolioPage extends Page {
     public PortfolioPage(WebDriver driver) {
@@ -22,9 +22,14 @@ public class PortfolioPage extends Page {
         return driver.getTitle().contains("Portfolios | PowerSteering");
     }
 
-    public AddPortfolioPage addPortfolio() {
+    public AddPortfolioPage addPortfolioBtn(String portfolioName) {
         driver.findElement(By.xpath(ADD_PORTFOLIO_BTN.getLocator())).click();
 
-        return new AddPortfolioPage(driver);
+        return new AddPortfolioPage(driver, portfolioName);
+    }
+
+    public boolean searchPortfolioByName(String portfolioName) {
+
+        return false;
     }
 }
