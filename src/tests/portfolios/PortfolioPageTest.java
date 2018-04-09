@@ -1,9 +1,11 @@
-package tests;
+package tests.portfolios;
 
-import org.junit.Assert;
+import static org.junit.Assert.*;
+
 import org.junit.Test;
 import pages.portfolio.PortfolioPage;
 import pages.exception.NotLoggedInException;
+import tests.PageTest;
 
 public class PortfolioPageTest extends PageTest {
 
@@ -11,14 +13,14 @@ public class PortfolioPageTest extends PageTest {
     public void testPortfolioPageOpens() throws NotLoggedInException {
 
         login("gregoryk", "gregory82");
-        Assert.assertTrue(new PortfolioPage(driver).pageIsOpened());
-        System.out.println(driver.getTitle());
+        assertTrue("Portfolio grid page opens", new PortfolioPage(driver).pageIsOpened());
     }
+
     @Test
     public void testAddButton() throws NotLoggedInException {
         login("gregoryk", "gregory82");
         PortfolioPage portfolioPage = new PortfolioPage(driver);
-        portfolioPage.addPortfolio();
-
+        portfolioPage.pageIsOpened();
+        assertTrue("Add Portfolio page opens", portfolioPage.addPortfolio().pageIsOpened());
     }
 }

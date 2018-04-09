@@ -5,7 +5,7 @@ import pages.Page;
 import pages.exception.NotLoggedInException;
 
 public class AddPortfolioPage extends Page{
-    public AddPortfolioPage(WebDriver driver) {
+     AddPortfolioPage(WebDriver driver) {
         super(driver);
     }
 
@@ -16,6 +16,6 @@ public class AddPortfolioPage extends Page{
 
     @Override
     public boolean pageIsOpened() throws NotLoggedInException {
-        return false;
+        return driver.getTitle().contains("Portfolios: Define Portfolio");
     }
 }

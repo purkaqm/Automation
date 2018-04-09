@@ -1,14 +1,15 @@
-package tests;
+package tests.login;
 
-import org.junit.Assert;
+import static org.junit.Assert.*;
 import org.junit.Test;
 import pages.LoginPage;
 import pages.exception.NotLoggedInException;
+import tests.PageTest;
 
 public class LoginPageTest extends PageTest {
 
     @Test
     public void testLogin() throws NotLoggedInException {
-        Assert.assertTrue(new LoginPage(driver).login("gregoryk","gregory82"));
+        assertTrue(new LoginPage(driver).login("gregoryk","gregory82"));
     }
 }

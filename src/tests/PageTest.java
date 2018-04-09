@@ -12,12 +12,12 @@ import static locators.CommonLoc.*;
 
 public class PageTest {
 
-    void login(String login, String password) throws NotLoggedInException {
+    protected void login(String login, String password) throws NotLoggedInException {
         new LoginPage(driver).login(login,password);
     }
 
 
-    ChromeDriver driver;
+    protected ChromeDriver driver;
 
     // Инициализация вебдрайвера
     // ChromeDriver
