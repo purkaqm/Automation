@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.exception.NotLoggedInException;
 
-import static locators.LoginPageLoc.*;
+import static locators.loginPage.LoginPageLoc.*;
 
 public class LoginPage extends Page {
 

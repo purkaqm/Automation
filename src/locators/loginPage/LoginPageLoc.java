@@ -1,4 +1,6 @@
-package locators;
+package locators.loginPage;
+
+import locators.LocatorAble;
 
 public enum LoginPageLoc implements LocatorAble {
     LOGIN("loginField"), PASSWORD("passwordField"), LOGIN_BTN("//input[@class=\"signInButton\"]")

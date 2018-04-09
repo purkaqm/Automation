@@ -1,12 +1,14 @@
-package pages;
+package pages.portfolio;
 
 import org.openqa.selenium.WebDriver;
+import pages.Page;
 import pages.exception.NotLoggedInException;
 
-import static locators.homePage.HomePageLoc.*;
+public class PortfolioSummaryPage extends Page {
 
-public class HomePage extends Page {
-    public HomePage(WebDriver driver) {
+    private String portfolioName;
+
+    public PortfolioSummaryPage(WebDriver driver) {
         super(driver);
     }
 
@@ -17,8 +19,10 @@ public class HomePage extends Page {
 
     @Override
     public boolean pageIsOpened() throws NotLoggedInException {
-        driver.get(HOME_PAGE_URL.getLocator());
+        return false;
+    }
 
-        return driver.getTitle().contains("Home");
+    public String getPortfolioName() {
+        return "";
     }
 }
