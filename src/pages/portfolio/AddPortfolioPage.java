@@ -9,7 +9,7 @@ import static locators.portfolios.AddPortfolioPageLoc.*;
 
 public class AddPortfolioPage extends Page {
 
-    private static String portfolioName;
+    private String portfolioName;
 
     AddPortfolioPage(WebDriver driver, String portfolioName) {
         super(driver);
