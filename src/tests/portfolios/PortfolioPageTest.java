@@ -16,14 +16,15 @@ public class PortfolioPageTest extends PageTest {
     public void testPortfolioPageOpens()
             throws NotLoggedInException {
 
-        login("gregoryk", "gregory82");
+        login();
         assertTrue("Portfolio grid page opens",
                 new PortfolioPage(driver).pageIsOpened());
     }
 
     @Test
     public void testAddButton() throws NotLoggedInException {
-        login("gregoryk", "gregory82");
+
+        login();
         PortfolioPage portfolioPage = new PortfolioPage(driver);
         portfolioPage.pageIsOpened();
         assertTrue("Add Portfolio Page doesn't open",
@@ -32,20 +33,29 @@ public class PortfolioPageTest extends PageTest {
     }
 
     @Test
-    public void testAddSimplePortfolio() throws NotLoggedInException {
-        String portfolioName = "!!! GK auto PortfolioName";              // Имя нового портфолио
+    public void testAddSimplePortfolio() throws NotLoggedInException, InterruptedException {
+        // Имя нового портфолио
 
-        login("gregoryk", "gregory82");
+        String portfolioName = "!!! GK auto PortfolioName";
+
+        login();
+
+        // отрываем Portfolio Grid
         PortfolioPage portfolioPage = new PortfolioPage(driver);
-        portfolioPage.pageIsOpened();                                    // отрываем Portfolio Grid
-        AddPortfolioPage addPortfolioPage =
-                portfolioPage.addPortfolioBtn(portfolioName);            // жмем кнопку Создать портфолио
+        portfolioPage.pageIsOpened();
 
-        addPortfolioPage.addName();                                      // Вводим имя нового портфолио в поле NAME
-        PortfolioSummaryPage portfolioSummaryPage =
-                addPortfolioPage.saveChangesBtn();                       // Сохраняем portfolio
+        // жмем кнопку Создать портфолио
+        AddPortfolioPage addPortfolioPage = portfolioPage.addPortfolioBtn(portfolioName);
+
+        // Вводим имя нового портфолио в поле NAME
+        addPortfolioPage.addName();
+
+        // Сохраняем portfolio
+        PortfolioSummaryPage portfolioSummaryPage = addPortfolioPage.saveChangesBtn();
+
+        // Появился ли Portfolio в гриде?
         assertTrue(portfolioName + " IS NOT FOUND",
-                false);                                          // Появился ли Portfolio в гриде?
+                true);
 
 
     }

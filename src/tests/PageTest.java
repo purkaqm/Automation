@@ -13,7 +13,11 @@ import static locators.CommonLoc.*;
 public class PageTest {
 
     protected void login(String login, String password) throws NotLoggedInException {
-        new LoginPage(driver).login(login,password);
+        new LoginPage(driver).login(login, password);
+    }
+
+    protected void login() throws NotLoggedInException {
+        login("gregoryk", "gregory82");
     }
 
 

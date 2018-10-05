@@ -2,8 +2,9 @@ package locators.homePage;
 
 import locators.LocatorAble;
 
+
 public enum HomePageLoc implements LocatorAble {
-    HOME_PAGE_URL("http://ord1qapp22ps.cinteractive.com:8080/pristine/Home.page")
+    HOME_PAGE_URL("Home.page")
 
     ;
 
