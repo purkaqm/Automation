@@ -8,7 +8,7 @@ public class PortfolioSummaryPage extends Page {
 
     private String portfolioName;
 
-    public PortfolioSummaryPage(WebDriver driver) {
+    protected PortfolioSummaryPage(WebDriver driver) {
         super(driver);
     }
 

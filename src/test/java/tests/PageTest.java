@@ -1,6 +1,8 @@
 package tests;
 
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.LoginPage;
@@ -26,7 +28,7 @@ public class PageTest {
     // Инициализация вебдрайвера
     // ChromeDriver
 
-    @BeforeTest
+    @BeforeSuite
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         driver = new ChromeDriver();
@@ -40,7 +42,7 @@ public class PageTest {
         driver.get(CONTEXT_URL.getLocator());
     }
 
-    @AfterTest
+    @AfterSuite
     public void tearDown() {
         driver.close();
     }
