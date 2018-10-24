@@ -1,8 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="TestSuite">
     <test name="AutoQA">
-        <classes>
-            <class name="tests.homePage.HomePageTest" />
-        </classes>
+
+        <packages>
+            <package name="tests.homePage"/>
+        </packages>
     </test>
 </suite>
