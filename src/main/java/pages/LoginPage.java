@@ -18,7 +18,6 @@ public class LoginPage extends Page {
     @Override
     public String pageTitle() {
 
-        System.out.println(driver.getTitle());
         return driver.getTitle();
 
     }

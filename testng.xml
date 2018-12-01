@@ -2,8 +2,11 @@
 <suite name="TestSuite">
     <test name="AutoQA">
 
-        <packages>
-            <package name="tests.homePage"/>
-        </packages>
+
+        <parameter name="fileName" value="greg001"/>
+        <classes>
+            <class name="tests.utils.LoginPageXLS"/>
+        </classes>
+
     </test>
 </suite>

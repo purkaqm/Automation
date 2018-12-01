@@ -14,7 +14,10 @@ public class HomePageTest extends PageTest {
     @Test
     public void testHomePageOpens() throws NotLoggedInException {
 
-        new LoginPage(driver).login("gregoryk","gregory82");
+        LoginPage loginPage = new LoginPage(driver);
+
+        loginPage.login("gregoryk", "gregory82");
+        System.out.println(loginPage.pageTitle());
         assertTrue(new HomePage(driver).pageIsOpened());
 
     }

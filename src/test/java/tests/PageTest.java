@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
@@ -25,13 +26,18 @@ public class PageTest {
 
     protected ChromeDriver driver;
 
+
     // Инициализация вебдрайвера
     // ChromeDriver
 
     @BeforeSuite
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-        driver = new ChromeDriver();
+
+
+        // headless driver - browser should not be launched
+
+        driver = new ChromeDriver(new ChromeOptions().setHeadless(false));
 
         // Время ожидания элемента
 
