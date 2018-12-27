@@ -5,7 +5,7 @@
 
         <parameter name="fileName" value="greg001"/>
         <classes>
-            <class name="tests.utils.LoginPageXLS"/>
+            <class name="tests.utils.ClickerTest"/>
         </classes>
 
     </test>

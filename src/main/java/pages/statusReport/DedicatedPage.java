@@ -13,7 +13,7 @@ public class DedicatedPage extends Page {
 
     @Override
     public String pageTitle() {
-        return null;
+        return driver.getTitle();
     }
 
     @Override

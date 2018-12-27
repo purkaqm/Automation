@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
@@ -26,6 +27,10 @@ public class PageTest {
 
     protected ChromeDriver driver;
 
+    public WebDriver getDriver() {
+        return driver;
+    }
+
 
     // Инициализация вебдрайвера
     // ChromeDriver
@@ -45,11 +50,13 @@ public class PageTest {
 
         // Открываем контекст
 
-        driver.get(CONTEXT_URL.getLocator());
+        //  driver.get(CONTEXT_URL.getLocator());
     }
 
     @AfterSuite
     public void tearDown() {
         driver.close();
     }
+
+
 }

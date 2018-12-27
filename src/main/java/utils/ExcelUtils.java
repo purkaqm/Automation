@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import pages.exception.NotLoggedInException;
 
 
 public class ExcelUtils {
@@ -42,7 +43,7 @@ public class ExcelUtils {
             int startRow = 0;
             int startCol = 0;
             int ci, cj;
-            int totalRows = ExcelWSheet.getLastRowNum();
+            int totalRows = ExcelWSheet.getLastRowNum()+1; // +1 is needed, I don't know why
             int totalCols = 2;
 
             tabArray = new String[totalRows][totalCols];
@@ -80,4 +81,6 @@ public class ExcelUtils {
             throw (e);
         }
     }
+
+
 }

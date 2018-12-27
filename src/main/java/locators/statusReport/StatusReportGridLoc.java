@@ -16,4 +16,9 @@ public enum StatusReportGridLoc implements LocatorAble {
     public String getLocator() {
         return locator;
     }
+
+    public String getProjectID(){
+
+        return "";
+    }
 }
