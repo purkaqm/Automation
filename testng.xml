@@ -3,10 +3,10 @@
     <test name="AutoQA">
 
 
-        <parameter name="fileName" value="greg001"/>
-        <classes>
-            <class name="tests.utils.ClickerTest"/>
-        </classes>
+        <packages>
+            <package name="tests.portfolios"></package>
+            <package name="tests.homePage"></package>
+        </packages>
 
     </test>
 </suite>

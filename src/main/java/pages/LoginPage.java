@@ -8,9 +8,6 @@ import static locators.loginPage.LoginPageLoc.*;
 
 public class LoginPage extends Page {
 
-    private boolean login = false;
-
-
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -30,6 +27,12 @@ public class LoginPage extends Page {
 
     public boolean login(String login, String password) throws NotLoggedInException {
 
+        // Check session
+
+        if (loggedIn) {
+            return loggedIn;
+        }
+
         if (driver.getTitle().contains("PowerSteering")) {
             // Enter login
             driver.findElement(By.id(LOGIN.getLocator())).sendKeys(login);
@@ -40,8 +43,10 @@ public class LoginPage extends Page {
         }
 
         if (driver.getTitle().contains("Home")) {
-            return true;
+            loggedIn = true;
+            return loggedIn;
         } else {
+            loggedIn = false;
             throw new NotLoggedInException("Login Failed");
         }
     }

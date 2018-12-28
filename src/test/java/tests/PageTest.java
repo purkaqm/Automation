@@ -3,9 +3,7 @@ package tests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.LoginPage;
 import pages.exception.NotLoggedInException;
@@ -25,12 +23,7 @@ public class PageTest {
     }
 
 
-    protected ChromeDriver driver;
-
-    public WebDriver getDriver() {
-        return driver;
-    }
-
+    protected static WebDriver driver;
 
     // Инициализация вебдрайвера
     // ChromeDriver
@@ -50,7 +43,7 @@ public class PageTest {
 
         // Открываем контекст
 
-        //  driver.get(CONTEXT_URL.getLocator());
+        driver.get(CONTEXT_URL.getLocator());
     }
 
     @AfterSuite

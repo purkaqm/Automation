@@ -10,6 +10,8 @@ abstract public class Page implements PageObject {
 
     protected WebDriver driver;
 
+    protected static boolean loggedIn = false;
+
 
     public Page(WebDriver driver) {
         this.driver = driver;
