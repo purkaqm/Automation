@@ -13,6 +13,8 @@ import tests.PageTest;
 
 public class PortfolioPageTest extends PageTest {
 
+    String portfolioName = "!!! GK auto PortfolioName";
+
 
     @Test
     public void testPortfolioPageOpens()
@@ -37,7 +39,6 @@ public class PortfolioPageTest extends PageTest {
     public void testAddSimplePortfolio() throws NotLoggedInException, InterruptedException {
         // Имя нового портфолио
 
-        String portfolioName = "!!! GK auto PortfolioName";
 
         login();
 
@@ -56,6 +57,17 @@ public class PortfolioPageTest extends PageTest {
 
         // Появился ли Portfolio в гриде?
         assertTrue(true, portfolioName + " IS NOT FOUND");
+
+
+    }
+
+    @Test
+    public void testRemovePortfolio() throws NotLoggedInException {
+        login();
+        PortfolioPage portfolioPage = new PortfolioPage(driver);
+        portfolioPage.pageIsOpened();
+
+        portfolioPage.removePortfolio(portfolioName);
 
 
     }

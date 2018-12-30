@@ -5,7 +5,6 @@
 
         <packages>
             <package name="tests.portfolios"></package>
-            <package name="tests.homePage"></package>
         </packages>
 
     </test>
