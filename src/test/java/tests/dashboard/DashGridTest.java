@@ -36,4 +36,15 @@ public class DashGridTest extends PageTest {
         dashGrid.clickGo();
         pause(10);
     }
+
+    @Test
+    public void changeSecondPOrtfolio() throws NotLoggedInException {
+        String secondPortfolio = "Ideas";
+
+        openGrid();
+
+        dashGrid.selectSecondPortfolio(secondPortfolio);
+        dashGrid.clickGo();
+        pause(10);
+    }
 }

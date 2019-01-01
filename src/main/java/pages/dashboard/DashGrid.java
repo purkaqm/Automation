@@ -42,4 +42,13 @@ public class DashGrid extends Page {
         // Click on GO button
         driver.findElement(By.xpath(GO_BTN.getLocator())).click();
     }
+
+    public void selectSecondPortfolio(String portfolioName) {
+        //click on Split Portfolio button
+        driver.findElement(By.xpath(PORTFOLIO_COMPARE_BTN.getLocator())).click();
+        //open Second Portfolio Menu
+        driver.findElement(By.xpath(PORTFOLIO_MENU_2.getLocator())).click();
+        //select second Portfolio
+        driver.findElement(By.xpath(PORTFOLIO2.getLocator3(portfolioName))).click();
+    }
 }
