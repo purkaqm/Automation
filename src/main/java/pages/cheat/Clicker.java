@@ -21,7 +21,7 @@ public class Clicker extends Page {
     }
 
     @Override
-    public boolean pageIsOpened() throws NotLoggedInException {
+    public boolean openPage() throws NotLoggedInException {
 
             driver.get("http://xn----7sbaf6bff6be2c7c6ah.xn--p1ai/v-obraze-literaturnogo-geroya.html#prettyPhoto");
 

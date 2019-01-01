@@ -2,7 +2,6 @@ package tests.homePage;
 
 import org.testng.annotations.Test;
 import pages.HomePage;
-import pages.LoginPage;
 import pages.exception.NotLoggedInException;
 import tests.PageTest;
 
@@ -15,7 +14,7 @@ public class HomePageTest extends PageTest {
     public void testHomePageOpens() throws NotLoggedInException {
 
         login();
-        assertTrue(new HomePage(driver).pageIsOpened());
+        assertTrue(new HomePage(driver).openPage());
 
     }
 }

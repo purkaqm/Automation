@@ -19,7 +19,7 @@ public class PortfolioPage extends Page {
     }
 
     @Override
-    public boolean pageIsOpened() {
+    public boolean openPage() {
         driver.get(context + PORTFOLIO_PAGE_URL.getLocator());
         return driver.getTitle().contains("Portfolios | PowerSteering");
     }

@@ -21,7 +21,7 @@ public class PortfolioPageTest extends PageTest {
             throws NotLoggedInException {
 
         login();
-        assertTrue(new PortfolioPage(driver).pageIsOpened(), "Portfolio grid page opens");
+        assertTrue(new PortfolioPage(driver).openPage(), "Portfolio grid page opens");
     }
 
     @Test
@@ -29,10 +29,10 @@ public class PortfolioPageTest extends PageTest {
 
         login();
         PortfolioPage portfolioPage = new PortfolioPage(driver);
-        portfolioPage.pageIsOpened();
+        portfolioPage.openPage();
         assertTrue(
                 portfolioPage.addPortfolioBtn("")
-                        .pageIsOpened(), "Add Portfolio Page doesn't open");
+                        .openPage(), "Add Portfolio Page doesn't open");
     }
 
     @Test
@@ -44,7 +44,7 @@ public class PortfolioPageTest extends PageTest {
 
         // отрываем Portfolio Grid
         PortfolioPage portfolioPage = new PortfolioPage(driver);
-        portfolioPage.pageIsOpened();
+        portfolioPage.openPage();
 
         // жмем кнопку Создать портфолио
         AddPortfolioPage addPortfolioPage = portfolioPage.addPortfolioBtn(portfolioName);
@@ -65,7 +65,7 @@ public class PortfolioPageTest extends PageTest {
     public void testRemovePortfolio() throws NotLoggedInException {
         login();
         PortfolioPage portfolioPage = new PortfolioPage(driver);
-        portfolioPage.pageIsOpened();
+        portfolioPage.openPage();
 
         portfolioPage.removePortfolio(portfolioName);
 

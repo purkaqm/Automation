@@ -11,7 +11,7 @@ import tests.PageTest;
 public class ClickerTest extends PageTest {
     @Test
     public void testClicker() throws NotLoggedInException {
-            new Clicker(driver).pageIsOpened();
+            new Clicker(driver).openPage();
 
     }
 }

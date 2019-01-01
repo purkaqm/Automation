@@ -20,7 +20,7 @@ public class LoginPage extends Page {
     }
 
     @Override
-    public boolean pageIsOpened() {
+    public boolean openPage() {
         return false;
 
     }

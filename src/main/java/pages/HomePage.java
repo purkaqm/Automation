@@ -16,7 +16,7 @@ public class HomePage extends Page {
     }
 
     @Override
-    public boolean pageIsOpened() throws NotLoggedInException {
+    public boolean openPage() throws NotLoggedInException {
         driver.get(context + HOME_PAGE_URL.getLocator());
 
         return driver.getTitle().contains("Home");

@@ -22,7 +22,7 @@ public class AddPortfolioPage extends Page {
     }
 
     @Override
-    public boolean pageIsOpened() throws NotLoggedInException {
+    public boolean openPage() throws NotLoggedInException {
         return driver.getTitle().contains("Portfolios: Define Portfolio");
     }
 

@@ -17,7 +17,7 @@ public class DedicatedPage extends Page {
     }
 
     @Override
-    public boolean pageIsOpened() throws NotLoggedInException {
+    public boolean openPage() throws NotLoggedInException {
         driver.get(context + "");
         return false;
     }

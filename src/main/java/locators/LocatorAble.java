@@ -5,6 +5,7 @@ public interface LocatorAble {
 
     final String PROJECT = "";
     final String SS = "{}";
+    final String CC = "{{}}";
 
 
 }

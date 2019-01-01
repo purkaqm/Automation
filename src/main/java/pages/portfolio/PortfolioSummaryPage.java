@@ -18,7 +18,7 @@ public class PortfolioSummaryPage extends Page {
     }
 
     @Override
-    public boolean pageIsOpened() throws NotLoggedInException {
+    public boolean openPage() throws NotLoggedInException {
         return false;
     }
 

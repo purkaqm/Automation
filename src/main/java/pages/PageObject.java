@@ -6,5 +6,5 @@ public interface PageObject {
 
     String pageTitle();
 
-    boolean pageIsOpened() throws NotLoggedInException;
+    boolean openPage() throws NotLoggedInException;
 }
