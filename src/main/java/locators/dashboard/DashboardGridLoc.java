@@ -14,7 +14,9 @@ public enum DashboardGridLoc implements LocatorAble {
     PORTFOLIO("//select[@id='DashboardToolbarId_LeftPortfolioSelector']//option[@title='" + SS + "']"),
     PORTFOLIO2("//select[@id='DashboardToolbarId_RightPortfolioSelector']//option[@title='" + SS + "']"),
     LAYOUT("//select[@id='DashboardToolbarId_LayoutSelector']//option[@title='" + CC + "']"),
-    PORTFOLIO_COMPARE_BTN("//div[@class='compareBtn']"),;
+    PORTFOLIO_COMPARE_BTN("//div[@class='compareBtn']"),
+
+    ;
 
 
     private String locator;

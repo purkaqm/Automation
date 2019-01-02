@@ -10,7 +10,7 @@ public class DashGridTest extends PageTest {
 
     DashGrid dashGrid;
 
-    private void openGrid() throws NotLoggedInException {
+    protected void openGrid() throws NotLoggedInException {
         login();
         dashGrid = new DashGrid(driver);
         dashGrid.openPage();
@@ -34,7 +34,6 @@ public class DashGridTest extends PageTest {
         dashGrid.selectPortfolio(portfolioName);
         dashGrid.selectLayout(dashlayout);
         dashGrid.clickGo();
-        pause(10);
     }
 
     @Test
@@ -45,6 +44,5 @@ public class DashGridTest extends PageTest {
 
         dashGrid.selectSecondPortfolio(secondPortfolio);
         dashGrid.clickGo();
-        pause(10);
     }
 }
