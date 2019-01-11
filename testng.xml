@@ -3,9 +3,17 @@
     <test name="AutoQA">
 
 
-        <packages>
-            <package name="tests.portfolios"></package>
-        </packages>
+        <classes>
+
+            <class name="tests.dashboard.DashLayoutsTest">
+                <methods>
+                    <include name="createNewLayout"/>
+                    <parameter name="layoutName" value="GK_LAYOUT_001"/>
+                    <parameter name="description" value="Some description"/>
+
+                </methods>
+            </class>
+        </classes>
 
     </test>
 </suite>

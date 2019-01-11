@@ -25,7 +25,7 @@ public class DashLayouts extends Page {
         return driver.getTitle().contains("Dashboard Layouts");
     }
 
-    public Step1 AddNewBtn() {
+    public Step1 addNewBtn() {
         driver.findElement(By.xpath(ADD_NEW_TOP_BTN.getLocator())).click();
         return new Step1(driver);
     }

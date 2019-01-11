@@ -1,6 +1,7 @@
 package tests.dashboard;
 
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.dashboard.layouts.Step1;
 import pages.exception.NotLoggedInException;
@@ -10,7 +11,8 @@ import pages.dashboard.layouts.DashLayouts;
 
 public class DashLayoutsTest extends PageTest {
 
-    DashLayouts dashLayouts;
+    private DashLayouts dashLayouts;
+    Step1 step1;
 
     @Test
     public void openDashboardLayoutsGrid() throws NotLoggedInException {
@@ -20,13 +22,29 @@ public class DashLayoutsTest extends PageTest {
     @Test
     public void ClickOnAddNewButton() throws NotLoggedInException {
         openDashboardLayoutsGrid();
-        Step1 step1 = dashLayouts.AddNewBtn();
+        step1 = dashLayouts.addNewBtn();
         Assert.assertTrue(step1.openPage(), "Step 1 page is NOT opened");
     }
 
-    protected boolean openLayoutsGrid() throws NotLoggedInException {
+    private boolean openLayoutsGrid() throws NotLoggedInException {
         login();
         dashLayouts = new DashLayouts(driver);
         return dashLayouts.openPage();
+    }
+
+    @Parameters({"layoutName","description"})
+    @Test
+    public void createNewLayout(String layoutName, String description) throws NotLoggedInException {
+
+        //  open Dashboard layouts grid
+        openLayoutsGrid();
+        // click on [Add New] button
+        step1 = dashLayouts.addNewBtn();
+        // Enter layout's name
+        step1.setLayoutName(layoutName);
+        // Enter description
+        step1.setDescription(description);
+        // click on [Continue] button
+        step1.continueBtn();
     }
 }
