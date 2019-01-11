@@ -5,7 +5,7 @@ import pages.exception.NotLoggedInException;
 
 public class Step1 extends DashLayouts {
 
-    String layoutName = "New Layout";
+    private String layoutName = "New Layout";
 
     public Step1(WebDriver driver) {
         super(driver);
