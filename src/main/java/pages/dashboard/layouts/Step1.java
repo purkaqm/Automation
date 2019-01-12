@@ -4,14 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.exception.NotLoggedInException;
 
-import static locators.dashboard.layouts.Step1.*;
+import static locators.dashboard.layouts.Step1_Loc.*;
 
-public class Step1 extends DashLayouts {
+public class Step1 extends Steps {
 
-    private String layoutName = "New Layout";
     private String description = "";
 
-    public Step1(WebDriver driver) {
+    Step1(WebDriver driver) {
         super(driver);
     }
 
@@ -37,11 +36,6 @@ public class Step1 extends DashLayouts {
         return driver.getTitle().contains(layoutName);
     }
 
-    public Step2 continueBtn() {
-        driver.findElement(By.xpath(CONTINUE_BTN.getLocator())).click();
-        return new Step2(driver);
-    }
-
     public void setLayoutName(String layoutName) {
         driver.findElement(By.xpath(LAYOUT_NAME_FLD.getLocator())).sendKeys(layoutName);
         this.layoutName = layoutName;
@@ -50,5 +44,15 @@ public class Step1 extends DashLayouts {
     public void setDescription(String description) {
         driver.findElement(By.xpath(DESCRIPTION_FLD.getLocator())).sendKeys(description);
         this.description = description;
+    }
+
+    @Override
+    public Step2 continueBtn() {
+        return (Step2)super.continueBtn();
+    }
+
+    private void testMeth(){
+        Step2 step2 = continueBtn();
+        
     }
 }

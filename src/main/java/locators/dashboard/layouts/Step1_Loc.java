@@ -2,7 +2,7 @@ package locators.dashboard.layouts;
 
 import locators.LocatorAble;
 
-public enum Step1 implements LocatorAble {
+public enum Step1_Loc implements LocatorAble {
 
     //Fields
 
@@ -16,18 +16,11 @@ public enum Step1 implements LocatorAble {
     //CheckBoxes
 
     DEFAULT_CBOX("//input[@id='DashLayoutDefault']"),
-    NOTIFY_PORTFOLIO_OWNERS_CBOX("//input[@id='NewLayoutAlertCheckbox']"),
-
-
-    // Buttons
-
-    CONTINUE_BTN("//input[contains(@value,'Continue')]"),
-    CANCEL_BTN("//div[contains(@class,'tight')]//input[contains(@value,'Cancel')]"),
-    SAVE_AND_FINISH_BTN("//input[contains(@value,'Finish')]"),;
+    NOTIFY_PORTFOLIO_OWNERS_CBOX("//input[@id='NewLayoutAlertCheckbox']"),;
 
     private String locator;
 
-    Step1(String locator) {
+    Step1_Loc(String locator) {
         this.locator = locator;
     }
 
