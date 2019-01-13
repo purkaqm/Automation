@@ -33,4 +33,8 @@ public class Step2 extends Steps implements NextPage {
         return new Step1(driver);
     }
 
+    @Override
+    public NextPage next() {
+        return null;
+    }
 }
