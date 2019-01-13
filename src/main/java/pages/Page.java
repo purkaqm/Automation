@@ -19,4 +19,6 @@ abstract public class Page implements PageObject {
 
     }
 
+    protected Page() {
+    }
 }

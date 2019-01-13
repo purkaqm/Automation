@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.dashboard.layouts.Step1;
+import pages.dashboard.layouts.Step2;
 import pages.exception.NotLoggedInException;
 import tests.TestPage;
 
@@ -11,8 +12,9 @@ import pages.dashboard.layouts.DashLayouts;
 
 public class DashLayoutsTestPage extends TestPage {
 
-    private DashLayouts dashLayouts;
+    DashLayouts dashLayouts;
     Step1 step1;
+    Step2 step2;
 
     @Test
     public void openDashboardLayoutsGrid() throws NotLoggedInException {
@@ -26,7 +28,7 @@ public class DashLayoutsTestPage extends TestPage {
         Assert.assertTrue(step1.openPage(), "Step 1 page is NOT opened");
     }
 
-    private boolean openLayoutsGrid() throws NotLoggedInException {
+     boolean openLayoutsGrid() throws NotLoggedInException {
         login();
         dashLayouts = new DashLayouts(driver);
         return dashLayouts.openPage();
@@ -45,6 +47,10 @@ public class DashLayoutsTestPage extends TestPage {
         // Enter description
         step1.setDescription(description);
         // click on [Continue] button
-        step1.continueBtn();
+
+        Step2 step2 = (Step2) step1.next();
+
+        step2.addCustomField("");
+
     }
 }

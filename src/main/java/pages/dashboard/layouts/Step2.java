@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import static locators.dashboard.layouts.Step2_Loc.*;
 
-public class Step2 extends Steps {
+public class Step2 extends Steps implements NextPage {
     public Step2(WebDriver driver) {
         super(driver);
     }
@@ -18,7 +18,7 @@ public class Step2 extends Steps {
     }
 
     public void addCustomField(String cfName){
-
+        System.out.println("ADD CUSTOM FIELD is PRESSED!");
     }
 
     public void addMeasure(String measureName){

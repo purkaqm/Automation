@@ -6,13 +6,14 @@ import pages.exception.NotLoggedInException;
 
 import static locators.dashboard.layouts.Step1_Loc.*;
 
-public class Step1 extends Steps {
+public class Step1 extends Steps implements NextPage {
 
     private String description = "";
 
-    Step1(WebDriver driver) {
+    public Step1(WebDriver driver) {
         super(driver);
     }
+
 
     public String getLayoutName() {
         return layoutName;
@@ -46,13 +47,10 @@ public class Step1 extends Steps {
         this.description = description;
     }
 
-    @Override
-    public Step2 continueBtn() {
-        return (Step2)super.continueBtn();
-    }
-
-    private void testMeth(){
-        Step2 step2 = continueBtn();
-        
+    public NextPage next() {
+        continueBtn();
+        return new Step2(driver);
     }
 }
+
+

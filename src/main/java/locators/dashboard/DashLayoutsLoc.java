@@ -7,7 +7,7 @@ public enum DashLayoutsLoc implements LocatorAble {
 
     DASHBOARD_LAYOUTS_GRID_URL("admin/Layouts.epage?sp=Sdash"),
 
-    // Buttons
+    // NavigationButtons
 
     ADD_NEW_TOP_BTN("//div[contains(@class,'top')]//input[@value='Add New']"),
     ADD_NEW_BOTTOM_BTN("//div[contains(@class,'bottom')]//input[@value='Add New']"),
