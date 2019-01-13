@@ -9,9 +9,9 @@ import pages.portfolio.AddPortfolioPage;
 import pages.portfolio.PortfolioPage;
 import pages.exception.NotLoggedInException;
 import pages.portfolio.PortfolioSummaryPage;
-import tests.PageTest;
+import tests.TestPage;
 
-public class PortfolioPageTest extends PageTest {
+public class PortfolioTestPage extends TestPage {
 
     String portfolioName = "!!! GK auto PortfolioName";
 

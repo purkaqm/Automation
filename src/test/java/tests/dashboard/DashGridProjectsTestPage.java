@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import pages.dashboard.DashGridRows;
 import pages.exception.NotLoggedInException;
 
-public class DashGridProjectsTest extends DashGridTest {
+public class DashGridProjectsTestPage extends DashGridTestPage {
 
     @Test
     public void projectColumnsTest() throws NotLoggedInException {

@@ -3,11 +3,11 @@ package tests.homePage;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.exception.NotLoggedInException;
-import tests.PageTest;
+import tests.TestPage;
 
 import static org.testng.Assert.assertTrue;
 
-public class HomePageTest extends PageTest {
+public class HomeTestPage extends TestPage {
 
 
     @Test

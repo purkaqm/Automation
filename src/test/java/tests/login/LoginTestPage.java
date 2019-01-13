@@ -4,10 +4,10 @@ import static org.testng.Assert.assertTrue;
 
 import pages.LoginPage;
 import pages.exception.NotLoggedInException;
-import tests.PageTest;
+import tests.TestPage;
 import org.testng.annotations.Test;
 
-public class LoginPageTest extends PageTest {
+public class LoginTestPage extends TestPage {
 
     @Test
     public void testLogin() throws NotLoggedInException {

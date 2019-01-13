@@ -4,9 +4,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.dashboard.DashGrid;
 import pages.exception.NotLoggedInException;
-import tests.PageTest;
+import tests.TestPage;
 
-public class DashGridTest extends PageTest {
+public class DashGridTestPage extends TestPage {
 
     protected DashGrid dashGrid;
 

@@ -5,7 +5,7 @@
 
         <classes>
 
-            <class name="tests.dashboard.DashLayoutsTest">
+            <class name="tests.dashboard.DashLayoutsTestPage">
                 <methods>
                     <include name="createNewLayout"/>
                     <parameter name="layoutName" value="GK_LAYOUT_001"/>

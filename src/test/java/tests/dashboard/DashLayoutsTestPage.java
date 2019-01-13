@@ -5,11 +5,11 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.dashboard.layouts.Step1;
 import pages.exception.NotLoggedInException;
-import tests.PageTest;
+import tests.TestPage;
 
 import pages.dashboard.layouts.DashLayouts;
 
-public class DashLayoutsTest extends PageTest {
+public class DashLayoutsTestPage extends TestPage {
 
     private DashLayouts dashLayouts;
     Step1 step1;
