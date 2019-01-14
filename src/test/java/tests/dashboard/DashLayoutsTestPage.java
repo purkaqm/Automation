@@ -48,6 +48,8 @@ public class DashLayoutsTestPage extends TestPage {
         step1.setDescription(description);
         // click on [Continue] button
 
+        step1.takeScreenshot("createNewLayout");
+
         Step2 step2 = (Step2) step1.next();
 
         step2.addCustomField("");
