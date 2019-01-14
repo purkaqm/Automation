@@ -5,11 +5,11 @@
 
         <classes>
 
-            <class name="tests.dashboard.DashLayoutsTestPage">
+            <class name="tests.statusReport.StatusReportGridTestPage">
                 <methods>
-                    <include name="createNewLayout"/>
-                    <parameter name="layoutName" value="GK_LAYOUT_001"/>
-                    <parameter name="description" value="Some description"/>
+                    <include name="testSRDedicatedGrid"/>
+                    <parameter name="projectName" value="GK_sr_project"/>
+                    <parameter name="projectID" value="1a236p80000mgjf0gr40000000"/>
 
                 </methods>
             </class>
