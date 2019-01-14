@@ -13,8 +13,8 @@ import pages.dashboard.layouts.DashLayouts;
 public class DashLayoutsTestPage extends TestPage {
 
     DashLayouts dashLayouts;
-    Step1 step1;
-    Step2 step2;
+    private Step1 step1;
+    private Step2 step2;
 
     @Test
     public void openDashboardLayoutsGrid() throws NotLoggedInException {
@@ -28,13 +28,13 @@ public class DashLayoutsTestPage extends TestPage {
         Assert.assertTrue(step1.openPage(), "Step 1 page is NOT opened");
     }
 
-     boolean openLayoutsGrid() throws NotLoggedInException {
+    boolean openLayoutsGrid() throws NotLoggedInException {
         login();
         dashLayouts = new DashLayouts(driver);
         return dashLayouts.openPage();
     }
 
-    @Parameters({"layoutName","description"})
+    @Parameters({"layoutName", "description"})
     @Test
     public void createNewLayout(String layoutName, String description) throws NotLoggedInException {
 
@@ -50,9 +50,8 @@ public class DashLayoutsTestPage extends TestPage {
 
         step1.takeScreenshot("createNewLayout");
 
-        Step2 step2 = (Step2) step1.next();
+        step1.next();
 
-        step2.addCustomField("");
 
     }
 }
