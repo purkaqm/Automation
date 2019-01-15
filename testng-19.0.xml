@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestSuite">
+    <parameter name="context" value="https://devxl.psteering.com/pristine_190_240940/"/>
+    <test name="AutoQA">
+
+
+        <classes>
+
+            <class name="tests.statusReport.StatusReportGridTestPage">
+                <methods>
+                    <include name="testSRDedicatedGrid"/>
+                    <parameter name="projectName" value="GK project with Tag Dependency"/>
+                    <parameter name="projectID" value="18u12a80000m2kd141n0000000"/>
+
+                </methods>
+            </class>
+        </classes>
+
+    </test>
+</suite>

@@ -7,6 +7,10 @@ public enum CommonLoc implements LocatorAble {
         this.locator = locator;
     }
 
+    public void setLocator(String locator) {
+        this.locator = locator;
+    }
+
     private String locator;
 
     @Override

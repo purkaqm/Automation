@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Parameters;
 import pages.LoginPage;
 import pages.exception.NotLoggedInException;
 
@@ -27,9 +28,9 @@ public class TestPage {
 
     // Инициализация вебдрайвера
     // ChromeDriver
-
+    @Parameters("context")
     @BeforeSuite
-    public void setUp() {
+    public void setUp(String context) {
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
 
@@ -42,6 +43,7 @@ public class TestPage {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         // Открываем контекст
+        CONTEXT_URL.setLocator(context);
 
         driver.get(CONTEXT_URL.getLocator());
     }
