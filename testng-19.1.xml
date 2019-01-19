@@ -6,9 +6,9 @@
 
         <classes>
 
-            <class name="tests.statusReport.StatusReportGridTestPage">
+            <class name="tests.timesheets.TimesheetViewTest">
                 <methods>
-                    <include name="testSRDedicatedGrid"/>
+                    <parameter name="userID" value="18u12a80000m02ph1qtg000000"/>
                     <parameter name="projectName" value="GK_sr_project"/>
                     <parameter name="projectID" value="1a236p80000mgjf0gr40000000"/>
 

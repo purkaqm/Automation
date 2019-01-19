@@ -3,9 +3,10 @@ package locators;
 public interface LocatorAble {
     String getLocator();
 
-    final String PS_ID = "PS_ID";
-    final String SS = "{}";
-    final String CC = "{{}}";
+    String PS_ID = "PS_ID";
+    String USER_ID = "USER_ID";
+    String SS = "{}";
+    String CC = "{{}}";
 
 
 }
