@@ -9,15 +9,23 @@ import pages.timesheets.TimesheetsView;
 import tests.TestPage;
 
 public class TimesheetViewTest extends TestPage {
+    private TimesheetsView timesheetViewPage;
 
 
     @Parameters("userID")
     @Test
     public void openProfile(String userID) throws NotLoggedInException {
-        TimesheetsView timesheetViewPage;
 
         login();
         timesheetViewPage = new TimesheetsView(driver);
         Assert.assertTrue(timesheetViewPage.openProfile(userID));
+    }
+
+    @Test
+    public void openProfile() throws NotLoggedInException {
+        login();
+        timesheetViewPage = new TimesheetsView(driver);
+        Assert.assertTrue(timesheetViewPage.openPage());
+
     }
 }
