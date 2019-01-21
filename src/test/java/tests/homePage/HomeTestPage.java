@@ -11,7 +11,7 @@ import static org.testng.Assert.assertTrue;
 public class HomeTestPage extends TestPage {
 
 
-    @Test
+    @Test(enabled = false)
     public void testHomePageOpens() throws NotLoggedInException {
 
         login();
