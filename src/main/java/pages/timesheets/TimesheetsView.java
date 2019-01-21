@@ -28,8 +28,8 @@ public class TimesheetsView extends Page {
         // Click on Timesheets URL
         driver.findElement(By.xpath(USER_PROFILE_MENU_TIMESHEETS.getLocator())).click();
         pageTitle();
-
-        return driver.getTitle().contains("Timesheets");
+        return driver.getTitle().contains("Timesheets")
+                && driver.findElement(By.xpath(EDIT_BTN.getLocator())).isDisplayed();
     }
 
     public boolean openProfile(String userID) throws NotLoggedInException {

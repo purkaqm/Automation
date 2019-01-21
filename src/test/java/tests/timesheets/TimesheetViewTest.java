@@ -13,7 +13,7 @@ public class TimesheetViewTest extends TestPage {
 
 
     @Parameters("userID")
-    @Test
+    @Test(priority = -1)
     public void openProfile(String userID) throws NotLoggedInException {
 
         login();
