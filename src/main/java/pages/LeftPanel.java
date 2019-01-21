@@ -28,6 +28,7 @@ public class LeftPanel extends Page {
             case HOME: {
                 WebElement homeIcon = driver.findElement(By.xpath(LEFT_PNL_HOME.getLocator()));
                 Actions action = new Actions(driver);
+                // mouse cursor to the HOME icon
                 action.moveToElement(homeIcon).perform();
                 break;
             }
