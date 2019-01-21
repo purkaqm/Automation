@@ -22,7 +22,7 @@ public enum CommonLoc implements LocatorAble {
 
 
     // Review items
-
+    RESIZER("//div[@class='vresizer']"),
     REVIEW_DASHBOARD("//div[@id='dash_item']"),
 
     ;

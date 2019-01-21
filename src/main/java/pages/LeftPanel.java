@@ -118,6 +118,11 @@ public class LeftPanel extends Page {
         }
     }
 
+    public void resize(int y) {
+        WebElement resizer = driver.findElement(By.xpath(RESIZER.getLocator()));
+        new Actions(driver).dragAndDropBy(resizer,1,y).perform();
+    }
+
     public enum LeftPanelItems {
         HOME, ADD, REVIEW, ADMIN, PROJECT, FAVORITES, HISTORY, IMPORTANT, ANALYTICS
     }

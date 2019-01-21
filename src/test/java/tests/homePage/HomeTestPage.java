@@ -34,11 +34,21 @@ public class HomeTestPage extends TestPage {
         }
     }
 
-    @Test
+    @Test(enabled = false)
     public void openDashboardFromLeftPanel() throws NotLoggedInException {
         login();
         LeftPanel leftPanel = new LeftPanel(driver);
         DashGrid dashGrid = leftPanel.openDashboard();
         Assert.assertTrue(dashGrid.pageTitle().contains("Dashboard"));
+    }
+
+    @Test
+    public void testResizer() throws NotLoggedInException {
+        login();
+        LeftPanel leftPanel = new LeftPanel(driver);
+        leftPanel.hoverHome(LeftPanel.LeftPanelItems.ADD);
+        pause(1);
+        leftPanel.resize(15);
+        pause(5);
     }
 }
