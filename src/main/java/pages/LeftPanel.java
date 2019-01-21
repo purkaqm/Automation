@@ -26,20 +26,71 @@ public class LeftPanel extends Page {
     public void hoverHome(leftPanelItems leftPanel) {
         switch (leftPanel) {
             case HOME: {
-                WebElement homeIcon = driver.findElement(By.xpath(LEFT_PNL_ADMIN.getLocator()));
+                WebElement homeIcon = driver.findElement(By.xpath(LEFT_PNL_HOME.getLocator()));
                 Actions action = new Actions(driver);
-//                action.moveToElement(homeIcon).clickAndHold();
-                homeIcon.click();
+                action.moveToElement(homeIcon).perform();
+                break;
             }
             case ADD: {
+                WebElement homeIcon = driver.findElement(By.xpath(LEFT_PNL_ADD.getLocator()));
+                Actions action = new Actions(driver);
+                action.moveToElement(homeIcon).perform();
+                break;
+
             }
             case REVIEW: {
+                WebElement homeIcon = driver.findElement(By.xpath(LEFT_PNL_REVIEW.getLocator()));
+                Actions action = new Actions(driver);
+                action.moveToElement(homeIcon).perform();
+                break;
+            }
+            case ADMIN: {
+                WebElement homeIcon = driver.findElement(By.xpath(LEFT_PNL_ADMIN.getLocator()));
+                Actions action = new Actions(driver);
+                action.moveToElement(homeIcon).perform();
+                break;
+
+            }
+            case PROJECT: {
+                WebElement homeIcon = driver.findElement(By.xpath(LEFT_PNL_PROJECT.getLocator()));
+                Actions action = new Actions(driver);
+                action.moveToElement(homeIcon).perform();
+                break;
+
+            }
+            case FAVORITES: {
+                WebElement homeIcon = driver.findElement(By.xpath(LEFT_PNL_FAVOR.getLocator()));
+                Actions action = new Actions(driver);
+                action.moveToElement(homeIcon).perform();
+                break;
+
+            }
+            case HISTORY: {
+                WebElement homeIcon = driver.findElement(By.xpath(LEFT_PNL_HISTORY.getLocator()));
+                Actions action = new Actions(driver);
+                action.moveToElement(homeIcon).perform();
+                break;
+            }
+
+            case IMPORTANT: {
+                WebElement homeIcon = driver.findElement(By.xpath(LEFT_PNL_IMPORTANT.getLocator()));
+                Actions action = new Actions(driver);
+                action.moveToElement(homeIcon).perform();
+                break;
+
+            }
+            case ANALYTICS: {
+                WebElement homeIcon = driver.findElement(By.xpath(LEFT_PNL_ANALYTICS.getLocator()));
+                Actions action = new Actions(driver);
+                action.moveToElement(homeIcon).perform();
+                break;
+
             }
 
         }
     }
 
-     public enum leftPanelItems {
+    public enum leftPanelItems {
         HOME, ADD, REVIEW, ADMIN, PROJECT, FAVORITES, HISTORY, IMPORTANT, ANALYTICS
     }
 }
