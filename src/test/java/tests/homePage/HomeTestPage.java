@@ -26,9 +26,9 @@ public class HomeTestPage extends TestPage {
         LeftPanel leftPanel = new LeftPanel(driver);
         LeftPanel.leftPanelItems[] items = LeftPanel.leftPanelItems.values();
 
-        for (int i = 0; i < items.length; i++) {
-            System.out.println(items[i]);
-            leftPanel.hoverHome(items[i]);
+        for (LeftPanel.leftPanelItems item : items) {
+            System.out.println(item);
+            leftPanel.hoverHome(item);
             pause(1);
         }
     }
