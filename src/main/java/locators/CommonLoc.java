@@ -19,6 +19,12 @@ public enum CommonLoc implements LocatorAble {
     LEFT_PNL_HISTORY("//a[contains(@title,'History')]"),
     LEFT_PNL_IMPORTANT("//a[contains(@title,'Important')]"),
     LEFT_PNL_ANALYTICS("//a[contains(@title,'Analytics')]"),
+
+
+    // Review items
+
+    REVIEW_DASHBOARD("//div[@id='dash_item']"),
+
     ;
 
     CommonLoc(String locator) {

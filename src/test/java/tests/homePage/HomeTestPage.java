@@ -19,17 +19,27 @@ public class HomeTestPage extends TestPage {
 
     }
 
-    @Test
+    @Test(enabled = false)
     public void testLeftPanelCommon() throws NotLoggedInException {
 
         login();
         LeftPanel leftPanel = new LeftPanel(driver);
-        LeftPanel.leftPanelItems[] items = LeftPanel.leftPanelItems.values();
+        LeftPanel.LeftPanelAreas[] items = LeftPanel.LeftPanelAreas.values();
 
-        for (LeftPanel.leftPanelItems item : items) {
+        for (LeftPanel.LeftPanelAreas item : items) {
             System.out.println(item);
             leftPanel.hoverHome(item);
             pause(1);
         }
+    }
+
+    @Test
+    public void openDashboardFromLeftPanel() throws NotLoggedInException {
+        login();
+        LeftPanel leftPanel = new LeftPanel(driver);
+        leftPanel.openDashboard();
+        pause(3);
+        leftPanel.hoverHome(LeftPanel.LeftPanelAreas.ADMIN);
+
     }
 }
