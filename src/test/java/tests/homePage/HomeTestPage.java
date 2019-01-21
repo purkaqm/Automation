@@ -2,6 +2,7 @@ package tests.homePage;
 
 import org.testng.annotations.Test;
 import pages.HomePage;
+import pages.LeftPanel;
 import pages.exception.NotLoggedInException;
 import tests.TestPage;
 
@@ -16,5 +17,14 @@ public class HomeTestPage extends TestPage {
         login();
         assertTrue(new HomePage(driver).openPage());
 
+    }
+
+    @Test
+    public void testLeftPanelCommon() throws NotLoggedInException {
+
+        login();
+        LeftPanel leftPanel = new LeftPanel(driver);
+        leftPanel.hoverHome(LeftPanel.leftPanelItems.HOME);
+        pause(5);
     }
 }

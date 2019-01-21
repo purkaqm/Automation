@@ -6,7 +6,7 @@
 
         <classes>
 
-            <class name="tests.timesheets.TimesheetViewTest">
+            <class name="tests.homePage.HomeTestPage">
                 <methods>
                     <parameter name="userID" value="18u12a80000m02ph1qtg000000"/>
                     <parameter name="projectName" value="GK_sr_project"/>
