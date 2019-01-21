@@ -29,7 +29,7 @@ public class LeftPanel extends Page {
      */
 
     public DashGrid openDashboard() {
-        hoverHome(LeftPanelAreas.REVIEW);
+        hoverHome(LeftPanelItems.REVIEW);
         selectReviewItem(ReviewItems.DASHBOARD);
 
         return new DashGrid(driver);
@@ -40,7 +40,7 @@ public class LeftPanel extends Page {
      */
 
     public void openVisualPortals() {
-        hoverHome(LeftPanelAreas.REVIEW);
+        hoverHome(LeftPanelItems.REVIEW);
 
     }
 
@@ -50,7 +50,7 @@ public class LeftPanel extends Page {
      * @param leftPanel
      */
 
-    public void hoverHome(LeftPanelAreas leftPanel) {
+    public void hoverHome(LeftPanelItems leftPanel) {
         switch (leftPanel) {
             case HOME: {
                 WebElement homeIcon = driver.findElement(By.xpath(LEFT_PNL_HOME.getLocator()));
@@ -118,14 +118,19 @@ public class LeftPanel extends Page {
         }
     }
 
-    public enum LeftPanelAreas {
+    public enum LeftPanelItems {
         HOME, ADD, REVIEW, ADMIN, PROJECT, FAVORITES, HISTORY, IMPORTANT, ANALYTICS
     }
 
     public void selectReviewItem(ReviewItems reviewItems) {
         switch (reviewItems) {
-            case DASHBOARD:
+            case DASHBOARD: {
+                while (!driver.findElement(By.xpath(REVIEW_DASHBOARD.getLocator())).isDisplayed()) {
+                    System.out.println("wait...");
+                    pause(1);
+                }
                 driver.findElement(By.xpath(REVIEW_DASHBOARD.getLocator())).click();
+            }
         }
     }
 

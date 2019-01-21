@@ -1,8 +1,10 @@
 package tests.homePage;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LeftPanel;
+import pages.dashboard.DashGrid;
 import pages.exception.NotLoggedInException;
 import tests.TestPage;
 
@@ -24,10 +26,9 @@ public class HomeTestPage extends TestPage {
 
         login();
         LeftPanel leftPanel = new LeftPanel(driver);
-        LeftPanel.LeftPanelAreas[] items = LeftPanel.LeftPanelAreas.values();
+        LeftPanel.LeftPanelItems[] items = LeftPanel.LeftPanelItems.values();
 
-        for (LeftPanel.LeftPanelAreas item : items) {
-            System.out.println(item);
+        for (LeftPanel.LeftPanelItems item : items) {
             leftPanel.hoverHome(item);
             pause(1);
         }
@@ -37,9 +38,7 @@ public class HomeTestPage extends TestPage {
     public void openDashboardFromLeftPanel() throws NotLoggedInException {
         login();
         LeftPanel leftPanel = new LeftPanel(driver);
-        leftPanel.openDashboard();
-        pause(3);
-        leftPanel.hoverHome(LeftPanel.LeftPanelAreas.ADMIN);
-
+        DashGrid dashGrid = leftPanel.openDashboard();
+        Assert.assertTrue(dashGrid.pageTitle().contains("Dashboard"));
     }
 }

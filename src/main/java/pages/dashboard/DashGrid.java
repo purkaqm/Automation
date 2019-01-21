@@ -15,7 +15,7 @@ public class DashGrid extends Page {
 
     @Override
     public String pageTitle() {
-        return null;
+        return driver.getTitle();
     }
 
     @Override

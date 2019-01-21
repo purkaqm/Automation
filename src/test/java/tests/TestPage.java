@@ -54,7 +54,7 @@ public class TestPage {
     }
 
 
-    public void pause(int secs){
+    public void pause(int secs) {
         try {
             Thread.sleep(secs*1000);
         } catch (InterruptedException e) {
