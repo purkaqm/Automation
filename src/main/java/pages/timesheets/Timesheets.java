@@ -5,11 +5,11 @@ import org.openqa.selenium.WebDriver;
 import pages.Page;
 import pages.exception.NotLoggedInException;
 
-import static locators.timesheets.TimesheetsViewLoc.*;
+import static locators.timesheets.TimesheetsLoc.*;
 import static locators.CommonLoc.*;
 
-public class TimesheetsView extends Page {
-    public TimesheetsView(WebDriver driver) {
+public class Timesheets extends Page {
+    public Timesheets(WebDriver driver) {
         super(driver);
     }
 
@@ -20,16 +20,15 @@ public class TimesheetsView extends Page {
     }
 
 
-    // Open Profile >> Timesheets
+    // Open Profile >> TimesheetsLoc
     @Override
     public boolean openPage() throws NotLoggedInException {
         // Open User menu
         driver.findElement(By.xpath(USER_PROFILE_MENU.getLocator())).click();
-        // Click on Timesheets URL
+        // Click on TimesheetsLoc URL
         driver.findElement(By.xpath(USER_PROFILE_MENU_TIMESHEETS.getLocator())).click();
         pageTitle();
-        return driver.getTitle().contains("Timesheets")
-                && driver.findElement(By.xpath(EDIT_BTN.getLocator())).isDisplayed();
+        return driver.getTitle().contains("TimesheetsLoc");
     }
 
     public boolean openProfile(String userID) throws NotLoggedInException {

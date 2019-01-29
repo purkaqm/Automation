@@ -5,11 +5,11 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.exception.NotLoggedInException;
 
-import pages.timesheets.TimesheetsView;
+import pages.timesheets.Timesheets;
 import tests.TestPage;
 
-public class TimesheetViewTest extends TestPage {
-    private TimesheetsView timesheetViewPage;
+public class TimesheetsLocTest extends TestPage {
+    private Timesheets timesheets;
 
 
     @Parameters("userID")
@@ -17,15 +17,17 @@ public class TimesheetViewTest extends TestPage {
     public void openProfile(String userID) throws NotLoggedInException {
 
         login();
-        timesheetViewPage = new TimesheetsView(driver);
-        Assert.assertTrue(timesheetViewPage.openProfile(userID));
+        timesheets = new Timesheets(driver);
+        Assert.assertTrue(timesheets.openProfile(userID));
     }
 
     @Test
     public void openProfile() throws NotLoggedInException {
         login();
-        timesheetViewPage = new TimesheetsView(driver);
-        Assert.assertTrue(timesheetViewPage.openPage());
+        timesheets = new Timesheets(driver);
+        Assert.assertTrue(timesheets.openPage());
 
     }
+
+
 }
