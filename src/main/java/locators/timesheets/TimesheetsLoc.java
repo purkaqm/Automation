@@ -35,6 +35,11 @@ public enum TimesheetsLoc implements LocatorAble {
     START_DATE_FIELD("//p-calendar[@id='status-reports-week-start-date']//input"),
     END_DATE_FIELD("//p-calendar[@id='status-reports-week-end-date']//input"),
     CALENDAR_BTN("//button[@id='status-reports-calendar-button']"),
+
+
+    // Widgets
+    CALENDAR_WGT("//div[contains(@class,'datepicker ')]"),
+
     ;
 
     private String locator;

@@ -5,7 +5,7 @@ public enum CommonLoc implements LocatorAble {
 
     // User Profile menu
     USER_PROFILE_MENU("//div[contains(@class,'userNameArrow')]"),
-    USER_PROFILE_MENU_TIMESHEETS("//div[@id='popupUserSettingsWindow']//div[contains(text(),'TimesheetsLoc')]"),
+    USER_PROFILE_MENU_TIMESHEETS("//div[@id='popupUserSettingsWindow']//div[contains(text(),'Timesheets')]"),
 
 
     // Left Nav panel

@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestSuite">
+    <parameter name="context" value="https://devxl.psteering.com/pristine_192_273178"/>
+    <test name="AutoQA">
+
+
+        <classes>
+
+            <class name="tests.timesheets.TimesheetsTest">
+                <methods>
+
+                </methods>
+            </class>
+        </classes>
+
+    </test>
+</suite>

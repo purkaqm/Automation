@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestSuite">
+    <parameter name="context" value="http://google.com"/>
+    <test name="AutoQA">
+
+
+        <classes>
+
+            <class name="tests.test.Table">
+                <methods>
+
+                </methods>
+            </class>
+        </classes>
+
+    </test>
+</suite>
