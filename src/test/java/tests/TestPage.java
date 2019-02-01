@@ -28,15 +28,16 @@ public class TestPage {
 
     // Инициализация вебдрайвера
     // ChromeDriver
-    @Parameters("context")
+    @Parameters({"context", "visible"})
     @BeforeSuite
-    public void setUp(String context) {
+    public void setUp(String context, boolean visible) {
+
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
 
         // headless driver - browser should not be launched
 
-        driver = new ChromeDriver(new ChromeOptions().setHeadless(false));
+        driver = new ChromeDriver(new ChromeOptions().setHeadless(!visible));
 
         // Время ожидания элемента
 
@@ -56,7 +57,7 @@ public class TestPage {
 
     public void pause(int secs) {
         try {
-            Thread.sleep(secs*1000);
+            Thread.sleep(secs * 1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
