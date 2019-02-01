@@ -36,11 +36,13 @@ public class Timesheets extends Page {
     }
 
     public boolean openProfile(String userID) throws NotLoggedInException {
+        log("Open profile: " + TIMESHEET_PROFILE.getLocator(userID));
         driver.get(context + TIMESHEET_PROFILE.getLocator(userID));
         return driver.getTitle().contains("Profile");
     }
 
     public Calendar getCalendar() {
+        log("Click on Calendar widget");
         driver.findElement(By.xpath(CALENDAR_BTN.getLocator())).click();
         return new Calendar(driver, CALENDAR_WGT);
     }

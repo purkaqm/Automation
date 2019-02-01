@@ -23,17 +23,26 @@ public class Calendar extends WidgetObject {
 
     @Override
     public void getTable() {
-        List<WebElement> rows;
-        List<WebElement> cells;
+        WebElement table =
+                driver.findElement(By.xpath(calendar.getLocator() + "//table"));
+        System.err.println(table);
+        List<WebElement> rows = table.findElements(By.cssSelector("tr"));
+
+        System.out.println("Rows ===== " + rows.size());
 
 
-        table = driver.findElement(By.xpath(calendar.getLocator() + "//table"));
-        rows = table.findElements(By.xpath("//tr"));
         for (WebElement row : rows) {
-            cells = row.findElements(By.xpath("//td"));
-            System.out.println("Element: " + cells.get(1).getText());
+            List<WebElement> cells = row.findElements(By.cssSelector("td"));
+
+            for (WebElement cell : cells) {
+                System.out.print(" | " + cell.getText());
+            }
+            System.out.println();
         }
 
 
     }
+
+
 }
+

@@ -6,7 +6,7 @@ import locators.LocatorAble;
 public enum TimesheetsLoc implements LocatorAble {
 
     TIMESHEETS_URL(""),
-    TIMESHEET_PROFILE("person/UserProfile.epage?sp=U" + USER_ID),
+    TIMESHEET_PROFILE("person/Timesheets.epage?sp=U" + USER_ID),
 
     // Buttons
     // View
