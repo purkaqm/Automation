@@ -17,12 +17,16 @@ public class TableObject extends widgets.WidgetObject implements widgets.WidgetA
     public void getTable() {
 
         System.out.println("getTable method is running...\n");
-        WebElement table = driver.findElement(By.id("customers"));
+        WebElement table = driver.findElement(By.xpath("//table[@id='customers']"));
 
         List<WebElement> rows = table.findElements(By.xpath(".//tr"));
 
         System.err.println("Rows SIZE = " + rows.size());
-        System.err.println(rows.get(1).getText());
+
+        for (WebElement row : rows) {
+            System.out.println(row.getText());
+        }
+
 
     }
 }

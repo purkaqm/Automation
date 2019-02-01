@@ -4,6 +4,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import utils.logging.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,6 +22,7 @@ abstract public class Page implements PageObject {
 
     public Page(WebDriver driver) {
         this.driver = driver;
+        System.out.println("CONTEXT ================ " + CONTEXT_URL.getLocator());
 
 
     }
@@ -46,6 +48,10 @@ abstract public class Page implements PageObject {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public void log(String string) {
+        new Logger(1).log(string);
     }
 
 }

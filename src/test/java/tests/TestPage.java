@@ -32,6 +32,8 @@ public class TestPage {
     @BeforeSuite
     public void setUp(String context, boolean visible) {
 
+        System.out.println("===============  SETUP is running  ================");
+
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
 
@@ -44,9 +46,11 @@ public class TestPage {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         // Открываем контекст
-        CONTEXT_URL.setLocator(context);
+        setMainURL(context);
 
-        driver.get(CONTEXT_URL.getLocator());
+
+        System.out.println("===============  SETUP is finishing  ================");
+
     }
 
     @AfterSuite
@@ -61,5 +65,13 @@ public class TestPage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    // SET main URL and open this page
+
+    public void setMainURL(String mainURL) {
+        CONTEXT_URL.setLocator(mainURL);
+        driver.get(CONTEXT_URL.getLocator());
+
     }
 }

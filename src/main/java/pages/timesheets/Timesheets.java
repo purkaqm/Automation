@@ -25,11 +25,13 @@ public class Timesheets extends Page {
     // Open Profile >> TimesheetsLoc
     @Override
     public boolean openPage() throws NotLoggedInException {
-        // Open User menu
+        log("Open User menu");
         driver.findElement(By.xpath(USER_PROFILE_MENU.getLocator())).click();
-        // Click on TimesheetsLoc URL
+        log("Click on TimesheetsLoc URL");
         driver.findElement(By.xpath(USER_PROFILE_MENU_TIMESHEETS.getLocator())).click();
         pageTitle();
+        log("Getting title");
+
         return driver.getTitle().contains("TimesheetsLoc");
     }
 

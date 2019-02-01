@@ -1,13 +1,18 @@
 package tests.test;
 
 import org.testng.annotations.Test;
+import pages.exception.NotLoggedInException;
+import pages.timesheets.Timesheets;
 import tests.TestPage;
-import utils.seleniumObjects.TableObject;
 
 public class Table extends TestPage {
 
     @Test
-    public void testTable() {
-        new TableObject(driver).getTable();
+    public void testTable() throws NotLoggedInException {
+
+        setMainURL("https://devxl.psteering.com/pristine_192_273178");
+        login();
+        Timesheets timesheets = new Timesheets(driver);
+        timesheets.openPage();
     }
 }
