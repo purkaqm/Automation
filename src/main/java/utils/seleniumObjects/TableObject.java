@@ -6,27 +6,30 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class TableObject extends widgets.WidgetObject implements widgets.WidgetAble {
+public class TableObject extends widgets.WidgetObject {
 
     public TableObject(WebDriver driver) {
         super(driver);
-        System.out.println("Table object is initialized");
     }
 
     @Override
     public void getTable() {
 
-        System.out.println("getTable method is running...\n");
-        WebElement table = driver.findElement(By.xpath("//table[@id='customers']"));
 
-        List<WebElement> rows = table.findElements(By.xpath(".//tr"));
+        WebElement table =
+                driver.findElement(By.xpath("//table[@id='customers']"));
+        List<WebElement> rows = table.findElements(By.cssSelector("tr"));
 
-        System.err.println("Rows SIZE = " + rows.size());
+        System.out.println("Rows ===== " + rows.size());
 
-        for (WebElement row : rows) {
-            System.out.println(row.getText());
+        for (int i = 0; i < rows.size(); i++) {
+            // System.out.println(rows.get(i).getText());
+
+            List<WebElement> cells = rows.get(i).findElements(By.xpath("./*"));
+
+            System.out.println(cells.size());
+
         }
-
 
     }
 }

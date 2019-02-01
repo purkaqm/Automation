@@ -35,10 +35,20 @@ public class TimesheetsTest extends TestPage {
         login();
         timesheets = new Timesheets(driver);
         timesheets.openPage();
-        Assert.assertTrue(timesheets.getCalendar().isVisible(),"Calendar is not visible");
+        Assert.assertTrue(timesheets.getCalendar().isVisible(), "Calendar is not visible");
     }
 
     @Test
+    public void getCalendarItems() throws NotLoggedInException {
+        login();
+        timesheets = new Timesheets(driver);
+        timesheets.openProfile("18u12a80000m0hahpbqg000000");
+        Calendar calendar = timesheets.getCalendar();
+
+        calendar.getTable();
+    }
+
+    @Test(enabled = false)
     public void selectDate() throws NotLoggedInException {
         login();
         timesheets = new Timesheets(driver);

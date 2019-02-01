@@ -32,7 +32,7 @@ public class Calendar extends WidgetObject {
 
 
         for (WebElement row : rows) {
-            List<WebElement> cells = row.findElements(By.cssSelector("td"));
+            List<WebElement> cells = row.findElements(By.xpath("./*"));
 
             for (WebElement cell : cells) {
                 System.out.print(" | " + cell.getText());
