@@ -1,6 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="TestSuite">
     <parameter name="context" value="https://devxl.psteering.com/pristine_191_256120/"/>
+    <parameter name="visible" value="true"/>
+
     <test name="AutoQA">
 
 
