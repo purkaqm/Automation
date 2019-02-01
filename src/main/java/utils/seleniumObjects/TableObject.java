@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 public class TableObject extends widgets.WidgetObject implements widgets.WidgetAble {
 
     public TableObject(WebDriver driver) {
@@ -14,11 +16,13 @@ public class TableObject extends widgets.WidgetObject implements widgets.WidgetA
     @Override
     public void getTable() {
 
-        System.out.println("getTable method is running...");
+        System.out.println("getTable method is running...\n");
         WebElement table = driver.findElement(By.id("customers"));
 
-        System.err.println("Tag name is " + table.getTagName());
-        System.err.println(table.getSize().getWidth());
+        List<WebElement> rows = table.findElements(By.xpath(".//tr"));
+
+        System.err.println("Rows SIZE = " + rows.size());
+        System.err.println(rows.get(1).getText());
 
     }
 }
