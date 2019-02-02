@@ -39,7 +39,15 @@ public class Calendar extends WidgetObject {
             }
             System.out.println();
         }
+    }
 
+    @Override
+    public void getTable(WebElement element) {
+
+    }
+
+    @Override
+    public void getTable(LocatorAble locator) {
 
     }
 

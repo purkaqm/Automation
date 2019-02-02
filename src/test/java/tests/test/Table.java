@@ -10,6 +10,6 @@ public class Table extends TestPage {
 
     @Test
     public void testTable() throws NotLoggedInException {
-
+        new TableObject(driver).getTable();
     }
 }

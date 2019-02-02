@@ -1,5 +1,6 @@
 package utils.seleniumObjects;
 
+import locators.LocatorAble;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,6 +31,16 @@ public class TableObject extends widgets.WidgetObject {
             System.out.println(cells.size());
 
         }
+
+    }
+
+    @Override
+    public void getTable(WebElement element) {
+
+    }
+
+    @Override
+    public void getTable(LocatorAble locator) {
 
     }
 }

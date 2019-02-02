@@ -18,4 +18,14 @@ public class SelectColumns extends WidgetObject {
 
 
     }
+
+    @Override
+    public void getTable(WebElement element) {
+
+    }
+
+    @Override
+    public void getTable(LocatorAble locator) {
+
+    }
 }
