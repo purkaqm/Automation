@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="TestSuite">
-    <parameter name="context" value="https://www.w3schools.com/html/html_tables.asp"/>
-    <parameter name="visible" value="false"/>
+    <parameter name="context" value="file:///G:\Develop\Projects\Automation\source\index.html"/>
+    <parameter name="visible" value="true"/>
     <test name="AutoQA">
 
 
