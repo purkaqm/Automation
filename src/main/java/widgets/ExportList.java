@@ -11,17 +11,12 @@ public class ExportList extends WidgetObject{
 
 
     @Override
+    public WebElement getTableItem(LocatorAble locator, String element) {
+        return null;
+    }
+
+    @Override
     public void getTable() {
-
-    }
-
-    @Override
-    public void getTable(WebElement element) {
-
-    }
-
-    @Override
-    public void getTable(LocatorAble locator) {
 
     }
 }

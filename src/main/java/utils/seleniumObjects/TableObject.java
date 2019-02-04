@@ -13,7 +13,13 @@ public class TableObject extends widgets.WidgetObject {
         super(driver);
     }
 
+    LocatorAble tableLoc;
+
     @Override
+    public WebElement getTableItem(LocatorAble locator, String element) {
+        return null;
+    }
+
     public void getTable() {
 
 
@@ -34,13 +40,5 @@ public class TableObject extends widgets.WidgetObject {
 
     }
 
-    @Override
-    public void getTable(WebElement element) {
 
-    }
-
-    @Override
-    public void getTable(LocatorAble locator) {
-
-    }
 }

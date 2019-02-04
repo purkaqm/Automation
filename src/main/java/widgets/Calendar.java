@@ -21,7 +21,6 @@ public class Calendar extends WidgetObject {
         return driver.findElement(By.xpath(calendar.getLocator())).isDisplayed();
     }
 
-    @Override
     public void getTable() {
         WebElement table =
                 driver.findElement(By.xpath(calendar.getLocator() + "//table"));
@@ -41,16 +40,10 @@ public class Calendar extends WidgetObject {
         }
     }
 
-    @Override
-    public void getTable(WebElement element) {
-
-    }
 
     @Override
-    public void getTable(LocatorAble locator) {
-
+    public WebElement getTableItem(LocatorAble locator, String element) {
+        return null;
     }
-
-
 }
 
