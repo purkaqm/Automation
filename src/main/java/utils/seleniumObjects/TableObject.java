@@ -15,9 +15,10 @@ public class TableObject extends widgets.WidgetObject {
 
     LocatorAble tableLoc;
 
+
     @Override
-    public WebElement getTableItem(LocatorAble locator, String element) {
-        return null;
+    public void selectTableItem(String element) {
+
     }
 
     public void getTable() {

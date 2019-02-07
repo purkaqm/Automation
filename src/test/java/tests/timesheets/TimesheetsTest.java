@@ -38,7 +38,7 @@ public class TimesheetsTest extends TestPage {
         Assert.assertTrue(timesheets.getCalendar().isVisible(), "Calendar is not visible");
     }
 
-    @Test
+    @Test(enabled = false)
     public void getCalendarItems() throws NotLoggedInException {
         login();
         timesheets = new Timesheets(driver);
@@ -54,7 +54,7 @@ public class TimesheetsTest extends TestPage {
         timesheets = new Timesheets(driver);
         timesheets.openPage();
         Calendar calendar = timesheets.getCalendar();
-        calendar.getTable();
+
 
     }
 

@@ -10,7 +10,6 @@ import java.util.List;
 public class Calendar extends WidgetObject {
 
     LocatorAble calendar;
-    private WebElement table;
 
     public Calendar(WebDriver driver, LocatorAble calendarWidget) {
         super(driver);
@@ -19,6 +18,11 @@ public class Calendar extends WidgetObject {
 
     public boolean isVisible() {
         return driver.findElement(By.xpath(calendar.getLocator())).isDisplayed();
+    }
+
+    @Override
+    public void selectTableItem(String element) {
+
     }
 
     public void getTable() {
@@ -41,9 +45,6 @@ public class Calendar extends WidgetObject {
     }
 
 
-    @Override
-    public WebElement getTableItem(LocatorAble locator, String element) {
-        return null;
-    }
+
 }
 

@@ -15,7 +15,7 @@ public class SelectColumns extends WidgetObject {
 
 
     @Override
-    public WebElement getTableItem(LocatorAble locator, String element) {
+    public String getTableItem(LocatorAble locator, String element) {
         return null;
     }
 

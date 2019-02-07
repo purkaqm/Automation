@@ -2,7 +2,6 @@ package pages.timesheets;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import pages.Page;
 import pages.exception.NotLoggedInException;
 import widgets.Calendar;
@@ -45,5 +44,13 @@ public class Timesheets extends Page {
         log("Click on Calendar widget");
         driver.findElement(By.xpath(CALENDAR_BTN.getLocator())).click();
         return new Calendar(driver, CALENDAR_WGT);
+    }
+
+    public String getStartDate() {
+        return driver.findElement(By.xpath(START_DATE_FIELD.getLocator())).getText();
+    }
+
+    public String getEndDate() {
+        return driver.findElement(By.xpath(END_DATE_FIELD.getLocator())).getText();
     }
 }
