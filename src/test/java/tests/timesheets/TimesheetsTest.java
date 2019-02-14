@@ -48,12 +48,23 @@ public class TimesheetsTest extends TestPage {
         calendar.getTable();
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void selectDate() throws NotLoggedInException {
-        login();
+
+        /*login();
         timesheets = new Timesheets(driver);
         timesheets.openPage();
-        Calendar calendar = timesheets.getCalendar();
+        //    Calendar calendar = timesheets.getCalendar();
+
+        System.err.println("NUMBER: " + timesheets.getStartDate());
+        timesheets.setStartDate("05/05/2005");
+       System.err.println("NUMBER: " + timesheets.getStartDate());*/
+
+        timesheets = new Timesheets(driver);
+        timesheets.setStartDate("05/05/2005");
+
+
+
 
 
     }

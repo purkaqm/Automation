@@ -32,7 +32,10 @@ public enum TimesheetsLoc implements LocatorAble {
 
     PREVIOUS_WEEK_BTN("status-reports-date-previous-week"),
     NEXT_WEEK_BTN("status-reports-date-next-week"),
-    START_DATE_FIELD("//p-calendar[@id='status-reports-week-start-date']//input"),
+     START_DATE_FIELD("//p-calendar[@id='status-reports-week-start-date']//input"),
+
+    // START_DATE_FIELD("//input[@name='time_PSDatePicker']"),
+
     END_DATE_FIELD("//p-calendar[@id='status-reports-week-end-date']//input"),
     CALENDAR_BTN("//button[@id='status-reports-calendar-button']"),
 

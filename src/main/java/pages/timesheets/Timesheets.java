@@ -1,10 +1,17 @@
 package pages.timesheets;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import pages.Page;
 import pages.exception.NotLoggedInException;
 import widgets.Calendar;
+
+import java.util.concurrent.TimeUnit;
 
 import static locators.timesheets.TimesheetsLoc.*;
 import static locators.CommonLoc.*;
@@ -47,10 +54,18 @@ public class Timesheets extends Page {
     }
 
     public String getStartDate() {
-        return driver.findElement(By.xpath(START_DATE_FIELD.getLocator())).getText();
+        return driver.findElement(By.xpath(START_DATE_FIELD.getLocator())).getAttribute("value");
     }
 
     public String getEndDate() {
         return driver.findElement(By.xpath(END_DATE_FIELD.getLocator())).getText();
+    }
+
+    public void setStartDate(String date) {
+
+         }
+
+    public void setEndDate(String date) {
+
     }
 }
