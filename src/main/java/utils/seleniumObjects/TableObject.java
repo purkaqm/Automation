@@ -9,8 +9,9 @@ import java.util.List;
 
 public class TableObject extends widgets.WidgetObject {
 
-    public TableObject(WebDriver driver) {
+    public TableObject(WebDriver driver, LocatorAble locator) {
         super(driver);
+        this.tableLoc = locator;
     }
 
     LocatorAble tableLoc;
@@ -25,17 +26,21 @@ public class TableObject extends widgets.WidgetObject {
 
 
         WebElement table =
-                driver.findElement(By.xpath("//table[@id='customers']"));
+                driver.findElement(By.xpath(tableLoc.getLocator()));
         List<WebElement> rows = table.findElements(By.cssSelector("tr"));
 
         System.out.println("Rows ===== " + rows.size());
 
-        for (int i = 0; i < rows.size(); i++) {
-            // System.out.println(rows.get(i).getText());
+        for (WebElement row : rows
+                ) {
+            System.out.println(row.getText());
 
-            List<WebElement> cells = rows.get(i).findElements(By.xpath("./*"));
+            List<WebElement> cells = row.findElements(By.xpath("./*"));
+            for (WebElement cell : cells
+                    ) {
+                System.out.println("Cell == " + cell.getText());
 
-            System.out.println(cells.size());
+            }
 
         }
 

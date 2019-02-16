@@ -6,10 +6,13 @@ import tests.TestPage;
 
 import utils.seleniumObjects.*;
 
+import static locators.test.TestLoc.*;
+
 public class Table extends TestPage {
 
     @Test
     public void testTable() throws NotLoggedInException {
-        new TableObject(driver).getTable();
+        TableObject tableObject = new TableObject(driver, MAIN_DIV);
+        tableObject.getTable();
     }
 }
