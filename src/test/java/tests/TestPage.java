@@ -45,6 +45,11 @@ public class TestPage {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
+        // Окно на весь экран
+
+        driver.manage().window().maximize();
+
+
         // Открываем контекст
         setMainURL(context);
 
