@@ -13,6 +13,7 @@ public class Table extends TestPage {
     @Test
     public void testTable() throws NotLoggedInException {
         TableObject tableObject = new TableObject(driver, MAIN_DIV);
+        tableObject.selectTableItem("28");
         tableObject.getTable();
     }
 }

@@ -14,12 +14,13 @@ public class TableObject extends widgets.WidgetObject {
         this.tableLoc = locator;
     }
 
-    LocatorAble tableLoc;
+    private LocatorAble tableLoc;
+    private String element;
 
 
     @Override
     public void selectTableItem(String element) {
-
+        this.element = element;
     }
 
     public void getTable() {
@@ -29,16 +30,16 @@ public class TableObject extends widgets.WidgetObject {
                 driver.findElement(By.xpath(tableLoc.getLocator()));
         List<WebElement> rows = table.findElements(By.cssSelector("tr"));
 
-        System.out.println("Rows ===== " + rows.size());
+        // System.out.println("Rows ===== " + rows.size());
 
-        for (WebElement row : rows
-                ) {
-            System.out.println(row.getText());
+        for (WebElement row : rows) {
+         //   System.out.println(row.getText());
 
             List<WebElement> cells = row.findElements(By.xpath("./*"));
-            for (WebElement cell : cells
-                    ) {
-                System.out.println("Cell == " + cell.getText());
+            for (WebElement cell : cells) {
+                if (cell.getText().contains(element)) {
+                    System.out.println(element + " === " + cell.getText());
+                }
 
             }
 
