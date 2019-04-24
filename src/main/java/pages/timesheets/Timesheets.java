@@ -17,6 +17,10 @@ import static locators.timesheets.TimesheetsLoc.*;
 import static locators.CommonLoc.*;
 
 public class Timesheets extends Page {
+
+
+    WorkItem workItem;
+
     public Timesheets(WebDriver driver) {
         super(driver);
     }
@@ -69,10 +73,12 @@ public class Timesheets extends Page {
 
     }
 
-    public void selectWorkItem(String workItemName) {
+    public WorkItem selectWorkItem(String workItemName) {
         // Find any empty work item field
 
         log("click on SELECT work");
         driver.findElement(By.xpath(SELECT_EMPTY_WORK.getLocator())).click();
+        workItem = new WorkItem(driver);
+        return workItem;
     }
 }
