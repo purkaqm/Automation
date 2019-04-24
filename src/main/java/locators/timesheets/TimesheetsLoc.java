@@ -9,9 +9,12 @@ public enum TimesheetsLoc implements LocatorAble {
     TIMESHEET_PROFILE("person/Timesheets.epage?sp=U" + USER_ID),
 
     // Buttons
+
+    DELETE_BTN("//i[contains(@class,'delete')]"),
+
     // View
 
-    SUBMIT_BTN(""),
+    SUBMIT_BTN("//button[contains(text(),'Submit')]"),
     RECALL("//button[text()='Recall']"),
     LOCATION_BTN(""),
     SELECT_COLUMN_BTN(""),
@@ -21,18 +24,15 @@ public enum TimesheetsLoc implements LocatorAble {
 
     // Edit
 
-    SAVE_CHANGES_BTN("//input[contains(@value,'Save Changes')]"),
-    SAVE_SUBMIT_BTN("//input[contains(@value,'Save & Submit')]"),
-    CANCEL_BTN("//input[contains(@value,'Cancel')]"),
-    ADD_BTN("//div[contains(@class,'toolbar-top')]//input[contains(@value,'Add')]"),
-    GO_BTN("//div[contains(@class,'toolbar-top')]//input[contains(@value,'Go')]"),
-    COPY_LAST_BTN("//div[contains(@class,'toolbar-top')]//a[contains(text(),'Copy')]"),
+    SAVE_BTN("//input[contains(@value,'Save Changes')]"),
+    CANCEL_BTN("//button[contains(text(),'Cancel')]"),
+    COPY_LAST_BTN("//button[contains(text(),'Copy')]"),
 
     // Date Fields and Buttons
 
     PREVIOUS_WEEK_BTN("status-reports-date-previous-week"),
     NEXT_WEEK_BTN("status-reports-date-next-week"),
-     START_DATE_FIELD("//p-calendar[@id='status-reports-week-start-date']//input"),
+    START_DATE_FIELD("//p-calendar[@id='status-reports-week-start-date']//input"),
 
     // START_DATE_FIELD("//input[@name='time_PSDatePicker']"),
 
@@ -42,6 +42,10 @@ public enum TimesheetsLoc implements LocatorAble {
 
     // Widgets
     CALENDAR_WGT("//div[contains(@class,'datepicker ')]"),
+
+    // Grid
+
+    SELECT_EMPTY_WORK("//button[@class='work-selector-button']")
 
     ;
 

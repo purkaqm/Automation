@@ -23,8 +23,8 @@ public class Timesheets extends Page {
 
     @Override
     public String pageTitle() {
-        System.out.println(driver.getTitle());
-        return "";
+
+        return driver.getTitle();
     }
 
 
@@ -38,7 +38,7 @@ public class Timesheets extends Page {
         pageTitle();
         log("Getting title");
 
-        return driver.getTitle().contains("TimesheetsLoc");
+        return driver.getTitle().contains("Timesheets");
     }
 
     public boolean openProfile(String userID) throws NotLoggedInException {
@@ -63,9 +63,16 @@ public class Timesheets extends Page {
 
     public void setStartDate(String date) {
 
-         }
+    }
 
     public void setEndDate(String date) {
 
+    }
+
+    public void selectWorkItem(String workItemName) {
+        // Find any empty work item field
+
+        log("click on SELECT work");
+        driver.findElement(By.xpath(SELECT_EMPTY_WORK.getLocator())).click();
     }
 }

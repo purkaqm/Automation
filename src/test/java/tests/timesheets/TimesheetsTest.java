@@ -22,7 +22,7 @@ public class TimesheetsTest extends TestPage {
         Assert.assertTrue(timesheets.openProfile(userID));
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void openProfile() throws NotLoggedInException {
         login();
         timesheets = new Timesheets(driver);
@@ -48,7 +48,7 @@ public class TimesheetsTest extends TestPage {
         calendar.getTable();
     }
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void selectDate() throws NotLoggedInException {
 
         login();
@@ -59,6 +59,14 @@ public class TimesheetsTest extends TestPage {
         System.err.println("NUMBER: " + timesheets.getStartDate());
         timesheets.setStartDate("05/05/2005");
         System.err.println("NUMBER: " + timesheets.getStartDate());
+
+
+    }
+
+    @Test(enabled = true)
+    public void selectWorkItem() throws NotLoggedInException {
+        timesheets.selectWorkItem("");
+        pause(5);
 
 
     }
