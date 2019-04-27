@@ -7,6 +7,7 @@ public interface LocatorAble {
     String USER_ID = "USER_ID";
     String SS = "{}";
     String CC = "{{}}";
+    String PS_NAME = "PS_NAME";
 
 
 }

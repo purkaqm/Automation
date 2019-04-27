@@ -9,7 +9,7 @@ public enum WorkItemLoc implements LocatorAble {
     BROWSE_TAB("//a//span[contains(text(),'Browse')]"),
     SEARCH_TAB("//a//span[contains(text(),'Search')]"),
 
-    ;
+    WORK_ITEM_NAME("//td//span[contains(text(),'" + PS_NAME + "')]/preceding::span[1]"),;
 
     private String locator;
 
@@ -20,5 +20,9 @@ public enum WorkItemLoc implements LocatorAble {
     @Override
     public String getLocator() {
         return locator;
+    }
+
+    public String getLocator(String workName) {
+        return WORK_ITEM_NAME.getLocator().replace(PS_NAME, workName);
     }
 }

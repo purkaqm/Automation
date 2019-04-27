@@ -6,11 +6,13 @@ import org.testng.annotations.Test;
 import pages.exception.NotLoggedInException;
 
 import pages.timesheets.Timesheets;
+import pages.timesheets.WorkItem;
 import tests.TestPage;
 import widgets.Calendar;
 
 public class TimesheetsTest extends TestPage {
     private Timesheets timesheets;
+    private WorkItem workItem;
 
 
     @Parameters("userID")
@@ -65,10 +67,31 @@ public class TimesheetsTest extends TestPage {
 
     @Test(enabled = true)
     public void selectWorkItem() throws NotLoggedInException {
-        timesheets.selectWorkItem("");
-        pause(5);
+        workItem = timesheets.selectWorkItem("");
+    }
 
+    @Test(enabled = false,priority = 10)
+    public void workItemSwitchTabs() throws NotLoggedInException {
+        pause(3);
+        workItem.switchToBrowse();
+        pause(3);
+        workItem.switchToMyWorks();
+        pause(3);
+        workItem.switchToFavourites();
+        pause(3);
+        workItem.switchToSearch();
+        pause(3);
+    }
 
+    @Test(enabled = true,priority = 20)
+    @Parameters("projectName")
+    public void selectWorkItemInMyWorks(String projectName){
+        workItem.switchToBrowse();
+        pause(3);
+        workItem.switchToMyWorks();
+        pause(3);
+        workItem.selectWorkItem(projectName);
+        pause(3);
     }
 
 

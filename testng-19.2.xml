@@ -7,9 +7,11 @@
 
 
         <classes>
-
             <class name="tests.timesheets.TimesheetsTest">
+
                 <methods>
+                    <parameter name="projectName" value="basic project"/>
+
 
                 </methods>
             </class>
