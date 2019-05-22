@@ -5,8 +5,8 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.exception.NotLoggedInException;
 
-import pages.timesheets.Timesheets;
-import pages.timesheets.WorkItem;
+import pages.timesheets.Timesheets.Timesheets;
+import pages.timesheets.Timesheets.WorkItem;
 import tests.TestPage;
 import widgets.Calendar;
 
@@ -40,7 +40,7 @@ public class TimesheetsTest extends TestPage {
         Assert.assertTrue(timesheets.getCalendar().isVisible(), "Calendar is not visible");
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void getCalendarItems() throws NotLoggedInException {
         login();
         timesheets = new Timesheets(driver);
