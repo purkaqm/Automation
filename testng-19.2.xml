@@ -2,6 +2,7 @@
 <suite name="TestSuite">
     <parameter name="context" value="https://devxl.psteering.com/pristine_192_273178/"/>
     <parameter name="visible" value="true"/>
+    <parameter name="projectName" value="basic project"/>
 
     <test name="AutoQA">
 
@@ -10,7 +11,7 @@
             <class name="tests.timesheets.TimesheetsTest">
 
                 <methods>
-                    <parameter name="projectName" value="basic project"/>
+
 
 
                 </methods>
