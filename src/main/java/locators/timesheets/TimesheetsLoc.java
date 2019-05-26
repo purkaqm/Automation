@@ -7,6 +7,7 @@ public enum TimesheetsLoc implements LocatorAble {
 
     TIMESHEETS_URL(""),
     TIMESHEET_PROFILE("person/Timesheets.epage?sp=U" + USER_ID),
+    TIMESHEET_PROFILE_NEW("person/Timesheets.epage?sp=U" + USER_ID + "&new-ui=true"),
 
     // Buttons
 
@@ -37,17 +38,15 @@ public enum TimesheetsLoc implements LocatorAble {
     // START_DATE_FIELD("//input[@name='time_PSDatePicker']"),
 
     END_DATE_FIELD("//p-calendar[@id='status-reports-week-end-date']//input"),
-    CALENDAR_BTN("//button[@id='status-reports-calendar-button']"),
-
+    // CALENDAR_BTN("//i[contains(@class,'calendar')]"),
+    CALENDAR_BTN("//button[@id='status-reports-calendar-button']//*"),
 
     // Widgets
     CALENDAR_WGT("//div[contains(@class,'datepicker ')]"),
 
     // Grid
 
-    SELECT_EMPTY_WORK("//button[@class='work-selector-button']")
-
-    ;
+    SELECT_EMPTY_WORK("//button[@class='work-selector-button']");
 
     private String locator;
 
@@ -62,5 +61,9 @@ public enum TimesheetsLoc implements LocatorAble {
 
     public String getLocator(String userID) {
         return TIMESHEET_PROFILE.getLocator().replace(USER_ID, userID);
+    }
+
+    public String getLocator2(String userID) {
+        return TIMESHEET_PROFILE_NEW.getLocator().replace(USER_ID, userID);
     }
 }

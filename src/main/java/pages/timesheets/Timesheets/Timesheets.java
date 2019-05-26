@@ -2,6 +2,7 @@ package pages.timesheets.Timesheets;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import pages.Page;
 import pages.exception.NotLoggedInException;
 import widgets.Calendar;
@@ -38,9 +39,12 @@ public class Timesheets extends Page {
         return driver.getTitle().contains("Timesheets");
     }
 
-    public boolean openProfile(String userID) throws NotLoggedInException {
-        log("Open profile: " + TIMESHEET_PROFILE.getLocator(userID));
-        driver.get(context + TIMESHEET_PROFILE.getLocator(userID));
+    public boolean openProfile(String userID, boolean isNew) throws NotLoggedInException {
+        String currentProfile = isNew ? (context + TIMESHEET_PROFILE.getLocator2(userID)) :
+                (context + TIMESHEET_PROFILE.getLocator(userID));
+
+        log("Open profile: " + currentProfile);
+        driver.get(currentProfile);
         return driver.getTitle().contains("Profile");
     }
 

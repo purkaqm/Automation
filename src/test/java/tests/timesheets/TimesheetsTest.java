@@ -21,7 +21,7 @@ public class TimesheetsTest extends TestPage {
 
         login();
         timesheets = new Timesheets(driver);
-        Assert.assertTrue(timesheets.openProfile(userID));
+        Assert.assertTrue(timesheets.openProfile(userID,true));
     }
 
     @Test(enabled = true)
@@ -44,7 +44,7 @@ public class TimesheetsTest extends TestPage {
     public void getCalendarItems() throws NotLoggedInException {
         login();
         timesheets = new Timesheets(driver);
-        timesheets.openProfile("18u12a80000m0hahpbqg000000");
+        timesheets.openProfile("18u12a80000m0hahpbqg000000",true);
         Calendar calendar = timesheets.getCalendar();
 
         calendar.getTable();
