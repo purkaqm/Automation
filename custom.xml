@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="TestSuite">
-    <parameter name="context" value="file:///C:\Dev\Projects\Automation\source\index.html"/>
+    <parameter name="context" value="file:///G:\Develop\Projects\Automation\source\index.html"/>
     <parameter name="visible" value="true"/>
     <test name="AutoQA">
 
