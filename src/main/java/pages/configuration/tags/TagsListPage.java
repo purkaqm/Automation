@@ -24,10 +24,27 @@ public class TagsListPage extends Page {
         return true;
     }
 
-    public AddTagPopUp addNewTag(String tagName) {
+    public addTagPopUp addNewTag(String tagName) {
 
         log("Add New Tag - dialog window");
         driver.findElement(By.xpath(ADD_NEW_TAG_BTN.getLocator())).click();
-        return new AddTagPopUp(driver, tagName);
+        return new addTagPopUp(driver, tagName);
+    }
+
+    public TagSummary openTagSet(String tagName) {
+        log("Open tag set : " + tagName);
+        driver.findElement(By.xpath(TAG_SET_NAME.getTagName(tagName))).click();
+        return new TagSummary(driver);
+    }
+
+    public void removeTagSet(String tagName) {
+        log("Click on Remove tag set button: " + tagName);
+
+        log(TAG_SET_NAME.getTagName(tagName) + REMOVE_CHECKBOX.getLocator());
+
+        driver.findElement(By.xpath(TAG_SET_NAME.getTagName(tagName) + REMOVE_CHECKBOX.getLocator())).click();
+
+        log("Click on OK button");
+        driver.findElement(By.xpath(YES_BTN.getLocator())).click();
     }
 }

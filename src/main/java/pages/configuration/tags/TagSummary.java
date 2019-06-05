@@ -4,14 +4,9 @@ import org.openqa.selenium.WebDriver;
 import pages.Page;
 import pages.exception.NotLoggedInException;
 
-public class AddTagPopUp extends Page{
-
-    String tagName;
-
-
-    public AddTagPopUp(WebDriver driver, String tagName) {
+public class TagSummary extends Page{
+    public TagSummary(WebDriver driver) {
         super(driver);
-        this.tagName = tagName;
     }
 
     @Override
