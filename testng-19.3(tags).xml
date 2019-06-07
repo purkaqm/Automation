@@ -7,7 +7,7 @@
 
 
         <classes>
-            <class name="tests.configuration.tags.AddRemoveTagSet">
+            <class name="tests.configuration.tags.UpdateTagSet">
 
                 <methods>
 

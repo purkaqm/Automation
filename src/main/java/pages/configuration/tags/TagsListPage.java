@@ -32,7 +32,8 @@ public class TagsListPage extends Page {
         return new AddTagPopUp(driver, tagName);
     }
 
-    public TagSummary openTagSet(String tagName) {
+    public TagSummary openTagSet(String tagName) throws NotLoggedInException {
+        openPage();
         log("Open tag set : " + tagName);
         driver.findElement(By.xpath(TAG_SET_NAME.getTagName(tagName))).click();
         return new TagSummary(driver);
@@ -49,7 +50,7 @@ public class TagsListPage extends Page {
     }
 
 
-    public void addTagSetValues(String[] values, String tagName) {
+    public void addTagSetValues(String[] values, String tagName) throws NotLoggedInException {
 
         TagSummary tagSummary = openTagSet(tagName);
         tagSummary.updateValues(values);

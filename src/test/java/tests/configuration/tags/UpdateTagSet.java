@@ -19,11 +19,8 @@ public class UpdateTagSet extends TestPage {
         login();
         tagset = new TagsListPage(driver);
 
-        // create an empty tagSet
         addBlankTagSet(tagSetName, tagset);
-        // Open THIS tagset
-        tagset.openTagSet(tagSetName);
-        // Add a list of values
+
         tagset.addTagSetValues(values, tagSetName);
 
     }
