@@ -1,18 +1,19 @@
 package tests.configuration.tags;
 
 import org.testng.annotations.Test;
+import pages.configuration.tags.AddTagPopUp;
 import pages.configuration.tags.TagSummary;
 import pages.configuration.tags.TagsListPage;
 import pages.exception.NotLoggedInException;
 import tests.TestPage;
 
-public class AddTagSet extends TestPage {
+public class AddRemoveTagSet extends TestPage {
 
-    TagsListPage tagsListPage;
-    pages.configuration.tags.addTagPopUp addTagPopUp;
+    private TagsListPage tagsListPage;
     TagSummary tagSummary;
 
-    String tagName = "~~~Test Tag Name~~~";
+    String tagName = "????Test Tag Name~~~";
+    String workTypeName ="Program";
 
     @Test
     public void testAddNewTagSet() throws NotLoggedInException {
@@ -21,8 +22,15 @@ public class AddTagSet extends TestPage {
         tagsListPage = new TagsListPage(driver);
         tagsListPage.openPage(); // Open Admin >> Configuration >> Tags page
 
-        addTagPopUp = tagsListPage.addNewTag(tagName); // Add New tag dialog window opens
+        AddTagPopUp addTagPopUp = tagsListPage.addNewTag(tagName);
         addTagPopUp.setName();
+        addTagPopUp.selectWorkType(workTypeName);
+
+        addTagPopUp.submitForm();
+
+
+
+
     }
 
     @Test
@@ -35,6 +43,7 @@ public class AddTagSet extends TestPage {
     @Test
     public void testRemoveTagSet() throws NotLoggedInException {
         login();
+
         tagsListPage.openPage();
         tagsListPage.removeTagSet(tagName);
     }

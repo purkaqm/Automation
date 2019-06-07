@@ -2,6 +2,7 @@ package pages.configuration.tags;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import pages.Page;
 import pages.exception.NotLoggedInException;
 
@@ -24,11 +25,11 @@ public class TagsListPage extends Page {
         return true;
     }
 
-    public addTagPopUp addNewTag(String tagName) {
+    public AddTagPopUp addNewTag(String tagName) {
 
         log("Add New Tag - dialog window");
         driver.findElement(By.xpath(ADD_NEW_TAG_BTN.getLocator())).click();
-        return new addTagPopUp(driver, tagName);
+        return new AddTagPopUp(driver, tagName);
     }
 
     public TagSummary openTagSet(String tagName) {
@@ -40,11 +41,19 @@ public class TagsListPage extends Page {
     public void removeTagSet(String tagName) {
         log("Click on Remove tag set button: " + tagName);
 
-        log(TAG_SET_NAME.getTagName(tagName) + REMOVE_CHECKBOX.getLocator());
 
         driver.findElement(By.xpath(TAG_SET_NAME.getTagName(tagName) + REMOVE_CHECKBOX.getLocator())).click();
 
         log("Click on OK button");
         driver.findElement(By.xpath(YES_BTN.getLocator())).click();
+    }
+
+
+    public void addTagSetValues(String[] values, String tagName) {
+
+        TagSummary tagSummary = openTagSet(tagName);
+        tagSummary.updateValues(values);
+
+
     }
 }
