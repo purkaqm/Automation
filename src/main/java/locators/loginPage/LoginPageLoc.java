@@ -3,7 +3,8 @@ package locators.loginPage;
 import locators.LocatorAble;
 
 public enum LoginPageLoc implements LocatorAble {
-    LOGIN("loginField"), PASSWORD("passwordField"), LOGIN_BTN("//input[@class=\"signInButton\"]")
+    LOGIN("loginField"), PASSWORD("passwordField"), LOGIN_BTN("//input[@class=\"signInButton\"]"),
+    LOCALE("localeSelect"),LOCALE_ENGLISH("//div[text()='English']"),
 
 
     ;

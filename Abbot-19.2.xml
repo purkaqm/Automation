@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestSuite">
+    <parameter name="context" value="https://devxl.psteering.com/AbbottPIE_192_308476/"/>
+    <parameter name="visible" value="true"/>
+
+    <test name="AutoQA">
+
+
+        <classes>
+            <class name="tests.configuration.tags.AddRemoveTagSet">
+
+            </class>
+            <class name="tests.configuration.tags.UpdateTagSet">
+
+                <methods>
+
+
+                </methods>
+            </class>
+        </classes>
+
+    </test>
+</suite>

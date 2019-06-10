@@ -1,5 +1,6 @@
 package tests.configuration.tags;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.configuration.tags.AddTagPopUp;
 import pages.configuration.tags.TagSummary;
@@ -12,11 +13,9 @@ public class AddRemoveTagSet extends TestPage {
     private TagsListPage tagsListPage;
     TagSummary tagSummary;
 
-    String tagName = "????Test Tag Name~~~";
-    String workTypeName ="Program";
-
+    @Parameters({"workTypeName", "tagName"})
     @Test
-    public void testAddNewTagSet() throws NotLoggedInException {
+    public void testAddNewTagSet(String workTypeName, String tagName) throws NotLoggedInException {
 
         login();
         tagsListPage = new TagsListPage(driver);
@@ -29,19 +28,19 @@ public class AddRemoveTagSet extends TestPage {
         addTagPopUp.submitForm();
 
 
-
-
     }
 
+    @Parameters("tagName")
     @Test
-    public void testOpenTagSet() throws NotLoggedInException {
+    public void testOpenTagSet(String tagName) throws NotLoggedInException {
         login();
         tagsListPage.openPage();
         tagsListPage.openTagSet(tagName);
     }
 
+    @Parameters("tagName")
     @Test
-    public void testRemoveTagSet() throws NotLoggedInException {
+    public void testRemoveTagSet(String tagName) throws NotLoggedInException {
         login();
 
         tagsListPage.openPage();

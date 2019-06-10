@@ -33,6 +33,13 @@ public class LoginPage extends Page {
             return loggedIn;
         }
 
+
+        //Change Locale to English
+        if (driver.findElement(By.id(LOCALE.getLocator())).isDisplayed()) {
+            driver.findElement(By.id(LOCALE.getLocator())).click();
+            driver.findElement(By.xpath(LOCALE_ENGLISH.getLocator())).click();
+        }
+
         if (driver.getTitle().contains("PowerSteering")) {
             // Enter login
             driver.findElement(By.id(LOGIN.getLocator())).sendKeys(login);
