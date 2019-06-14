@@ -14,7 +14,7 @@ public class AddRemoveTagSet extends TestPage {
     TagSummary tagSummary;
 
     @Parameters({"workTypeName", "tagName"})
-    @Test
+    @Test(enabled = false)
     public void testAddNewTagSet(String workTypeName, String tagName) throws NotLoggedInException {
 
         login();
@@ -31,7 +31,7 @@ public class AddRemoveTagSet extends TestPage {
     }
 
     @Parameters("tagName")
-    @Test
+    @Test(enabled = false)
     public void testOpenTagSet(String tagName) throws NotLoggedInException {
         login();
         tagsListPage.openPage();
@@ -39,7 +39,7 @@ public class AddRemoveTagSet extends TestPage {
     }
 
     @Parameters("tagName")
-    @Test
+    @Test(enabled = false)
     public void testRemoveTagSet(String tagName) throws NotLoggedInException {
         login();
 

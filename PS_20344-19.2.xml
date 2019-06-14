@@ -1,0 +1,41 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestSuite">
+    <parameter name="context" value="https://devxl.psteering.com/AbbottPIE_192_308476/"/>
+    <parameter name="visible" value="true"/>
+
+    <test name="AutoQA">
+
+
+        <classes>
+            <class name="tests.configuration.tags.AddRemoveTagSet">
+
+                <methods>
+
+                    <parameter name="workTypeName" value="Gated Project"/>
+                    <parameter name="tagName" value="???Test Tag Name~~~"/>
+
+
+                </methods>
+
+            </class>
+            <class name="tests.configuration.tags.CreateUpdateTagSets">
+
+                <methods>
+
+
+                </methods>
+            </class>
+            <class name="tests.configuration.tags.PS_20344">
+                <methods>
+                    <parameter name="projectID" value="1a2062o0000mdl8odt9g000000"/>
+                    <parameter name="tagGroup" value="Gk check PS-20344 ---- 1"/>
+                    <parameter name="tagName" value="~~ Color"/>
+                    <parameter name="tagValue" value="red"/>
+                    
+                </methods>
+                
+            </class>
+        </classes>
+
+    </test>
+</suite>

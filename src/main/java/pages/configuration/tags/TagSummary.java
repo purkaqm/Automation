@@ -23,9 +23,9 @@ public class TagSummary extends Page {
     }
 
 
-    public void updateValues(String[] values) {
+    public TagUpdate openUpdateTagsPage() {
         log("Click on UPDATE button");
         driver.findElement(By.xpath(UPDATE_BTN.getLocator())).click();
-
+        return new TagUpdate(driver);
     }
 }

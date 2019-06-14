@@ -7,19 +7,10 @@
 
 
         <classes>
-            <class name="tests.configuration.tags.AddRemoveTagSet">
+            <class name="tests.configuration.tags.CreateUpdateTagSets">
 
                 <methods>
-                    <parameter name="workTypeName" value="Gated Project"/>
-                    <parameter name="tagName" value="???Test Tag Name~~~"/>
 
-
-                </methods>
-
-            </class>
-            <class name="tests.configuration.tags.UpdateTagSet">
-
-                <methods>
 
 
                 </methods>

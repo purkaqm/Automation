@@ -2,7 +2,6 @@ package pages.configuration.tags;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import pages.Page;
 import pages.exception.NotLoggedInException;
 
@@ -52,8 +51,10 @@ public class TagsListPage extends Page {
 
     public void addTagSetValues(String[] values, String tagName) throws NotLoggedInException {
 
+        // open tag set
         TagSummary tagSummary = openTagSet(tagName);
-        tagSummary.updateValues(values);
+        // open Update Page and Enter values
+        tagSummary.openUpdateTagsPage().changeValues(values).applyChanges();
 
 
     }

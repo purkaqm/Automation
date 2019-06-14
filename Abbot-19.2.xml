@@ -10,7 +10,7 @@
             <class name="tests.configuration.tags.AddRemoveTagSet">
 
             </class>
-            <class name="tests.configuration.tags.UpdateTagSet">
+            <class name="tests.configuration.tags.CreateUpdateTagSets">
 
                 <methods>
 
