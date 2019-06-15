@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import pages.exception.NotLoggedInException;
 
 
@@ -14,6 +15,7 @@ public class ExcelUtils {
 
     private static HSSFSheet ExcelWSheet;
     private static HSSFWorkbook ExcelWBook;
+
 
     public void setExcelFile(String Path, String SheetName) throws Exception {
 
@@ -53,6 +55,7 @@ public class ExcelUtils {
             for (int i = startRow; i < totalRows; i++, ci++) {
                 cj = 0;
                 for (int j = startCol; j < totalCols; j++, cj++) {
+
                     tabArray[ci][cj] = getCellData(i, j);
                   // System.out.println(tabArray[ci][cj]);
                 }
@@ -67,7 +70,12 @@ public class ExcelUtils {
 
     private String getCellData(int RowNum, int ColNum) throws Exception {
 
+       // DataFormatter df = new DataFormatter();
+
         HSSFCell cell = ExcelWSheet.getRow(RowNum).getCell(ColNum);
+
+        cell.setCellType(1);
+
         return cell.getStringCellValue();
     }
 
