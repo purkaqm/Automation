@@ -1,5 +1,6 @@
 package tests.utils;
 
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -8,7 +9,15 @@ import utils.ExcelUtils;
 
 public class setTagsXLS {
 
-  //  String fileName;
+    String fileName;
+
+    @BeforeTest
+    @Parameters("fileName")
+    public void setup(String fileName) {
+        this.fileName = fileName;
+
+    }
+
 
     @Test(dataProvider = "setTags", enabled = true)
     public void setTagValues(String sequence, String tagValue) {
@@ -17,7 +26,7 @@ public class setTagsXLS {
 
     @DataProvider(name = "setTags")
     @Parameters("fileName")
-    public Object[][] setTags(String fileName) throws Exception {
+    public Object[][] setTags() throws Exception {
 
         return new ExcelUtils().getTableArray(fileName, "Sheet1");
     }
