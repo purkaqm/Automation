@@ -8,15 +8,15 @@ import utils.ExcelUtils;
 
 public class setTagsXLS {
 
+  //  String fileName;
 
-    @Parameters("fileName")
     @Test(dataProvider = "setTags", enabled = true)
     public void setTagValues(String sequence, String tagValue) {
         System.out.println("Seq: " + sequence + " Value: " + tagValue);
     }
 
-
     @DataProvider(name = "setTags")
+    @Parameters("fileName")
     public Object[][] setTags(String fileName) throws Exception {
 
         return new ExcelUtils().getTableArray(fileName, "Sheet1");

@@ -2,15 +2,15 @@
 <suite name="TestSuite">
     <parameter name="context" value="https://devxl.psteering.com/pristine_190_240940/"/>
     <parameter name="visible" value="true"/>
-    <parameter name="fileName" value="source\root.xls"/>
 
     <test name="AutoQA">
 
 
         <classes>
-
             <class name="tests.utils.setTagsXLS">
                 <parameter name="fileName" value="source\root.xls"/>
+
+
                 <methods>
 
                 </methods>
