@@ -12,9 +12,9 @@ public class setTagsXLS {
     String fileName;
 
     @BeforeTest
-    @Parameters("fileName")
-    public void setup(String fileName) {
-        this.fileName = fileName;
+    @Parameters("fileNameRoot")
+    public void setup(String fileNameRoot) {
+        this.fileName = fileNameRoot;
 
     }
 
