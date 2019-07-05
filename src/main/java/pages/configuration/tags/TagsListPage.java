@@ -58,4 +58,13 @@ public class TagsListPage extends Page {
 
 
     }
+
+    public void addTagSetValues(String[][] values, String tagName) throws NotLoggedInException {
+        // open tag set
+        TagSummary tagSummary = openTagSet(tagName);
+        // open Update Page and Enter values
+        tagSummary.openUpdateTagsPage().changeValues(values).applyChanges();
+
+
+    }
 }

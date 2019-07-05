@@ -30,6 +30,10 @@ public class ExcelUtils {
 
     }
 
+    public String[][] getTableArray(String filePath) throws Exception {
+        return (String[][]) getTableArray(filePath, "Sheet1");
+    }
+
     public Object[][] getTableArray(String FilePath, String SheetName) throws Exception {
 
         String[][] tabArray = null;
@@ -45,7 +49,7 @@ public class ExcelUtils {
             int startRow = 0;
             int startCol = 0;
             int ci, cj;
-            int totalRows = ExcelWSheet.getLastRowNum()+1; // +1 is needed, I don't know why
+            int totalRows = ExcelWSheet.getLastRowNum() + 1; // +1 is needed, I don't know why
             int totalCols = 2;
 
             tabArray = new String[totalRows][totalCols];
@@ -57,7 +61,7 @@ public class ExcelUtils {
                 for (int j = startCol; j < totalCols; j++, cj++) {
 
                     tabArray[ci][cj] = getCellData(i, j);
-                  // System.out.println(tabArray[ci][cj]);
+                    // System.out.println(tabArray[ci][cj]);
                 }
             }
 
@@ -70,7 +74,7 @@ public class ExcelUtils {
 
     private String getCellData(int RowNum, int ColNum) throws Exception {
 
-       // DataFormatter df = new DataFormatter();
+        // DataFormatter df = new DataFormatter();
 
         HSSFCell cell = ExcelWSheet.getRow(RowNum).getCell(ColNum);
 

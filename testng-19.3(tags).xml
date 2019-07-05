@@ -1,16 +1,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="TestSuite">
-    <parameter name="context" value="https://devxl.psteering.com/pristine_192_273178/"/>
-    <parameter name="visible" value="true"/>
+    <parameter name="context" value="https://devxl.psteering.com/pristine_193_305345/"/>
+    <parameter name="visible" value="false"/>
+
 
     <test name="AutoQA">
+        <parameter name="rootTag" value="rootTag"/>
 
 
         <classes>
-            <class name="tests.configuration.tags.CreateUpdateTagSets">
-
+            <class name="tests.configuration.tags.SetTagList">
                 <methods>
-
 
 
                 </methods>
