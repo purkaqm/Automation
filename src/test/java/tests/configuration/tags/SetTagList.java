@@ -9,6 +9,7 @@ import utils.ExcelUtils;
 public class SetTagList extends TestPage {
 
     TagsListPage tagsListPage;
+    String[][] data;
 
 
     @Test(dataProvider = "tagFileSource", enabled = true)
@@ -40,17 +41,16 @@ public class SetTagList extends TestPage {
 
     }
 
+    @Parameters({"root", "tag1", "tag2", "tag3", "tag4"})
+    @BeforeClass
+    public void setFileNames(String root, String tag1, String tag2, String tag3, String tag4) {
+
+        this.data = new String[][]{{root}, {tag1}, {tag2}, {tag3}, {tag4}};
+    }
+
 
     @DataProvider
     public Object[][] tagFileSource() {
-
-        String[][] data = {
-                {"root"},
-                {"tag001"},
-                {"tag002"},
-                {"tag003"},
-                {"tag004"}
-        };
 
         return data;
     }
