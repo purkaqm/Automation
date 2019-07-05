@@ -2,6 +2,7 @@ package tests.configuration.tags;
 
 import org.testng.annotations.*;
 import pages.configuration.tags.TagsListPage;
+import pages.exception.NotLoggedInException;
 import tests.TestPage;
 import utils.ExcelUtils;
 
@@ -10,10 +11,10 @@ public class SetTagList extends TestPage {
     TagsListPage tagsListPage;
 
 
-    @Test(dataProvider = "tagFileSource")
+    @Test(dataProvider = "tagFileSource", enabled = true)
     public void createRootTag(String rootTag) throws Exception {
 
-        String[][] twoColumnsList = new ExcelUtils().getTableArray("source\\"+rootTag+".xls");
+        String[][] twoColumnsList = new ExcelUtils().getTableArray("source\\" + rootTag + ".xls");
 
 
         login();
@@ -27,6 +28,15 @@ public class SetTagList extends TestPage {
         // enter values
         tagsListPage.addTagSetValues(twoColumnsList, rootTag);
 
+
+    }
+
+    @Test(dataProvider = "tagFileSource", enabled = true)
+    public void removeListOfTags(String rootTag) throws NotLoggedInException {
+        login();
+        tagsListPage = new TagsListPage(driver);
+        tagsListPage.openPage();
+        tagsListPage.removeTagSet(rootTag);
 
     }
 
