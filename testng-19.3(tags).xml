@@ -14,7 +14,7 @@
 
 
         <classes>
-            <class name="tests.configuration.tags.SetTagList">
+            <class name="tests.configuration.tags.AddRemoveTD">
                 <methods>
 
 

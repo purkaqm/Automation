@@ -34,7 +34,7 @@ public class AddRemoveTagSet extends TestPage {
     @Test(enabled = false)
     public void testOpenTagSet(String tagName) throws NotLoggedInException {
         login();
-        tagsListPage.openPage();
+      //  tagsListPage.openPage();
         tagsListPage.openTagSet(tagName);
     }
 
@@ -43,7 +43,7 @@ public class AddRemoveTagSet extends TestPage {
     public void testRemoveTagSet(String tagName) throws NotLoggedInException {
         login();
 
-        tagsListPage.openPage();
+       // tagsListPage.openPage();
         tagsListPage.removeTagSet(tagName);
     }
 }
