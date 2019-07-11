@@ -39,12 +39,13 @@ public class AddTagPopUp extends Page {
         driver.findElement(By.xpath(SUBMIT_BTN.getLocator())).click();
     }
 
-    public void selectWorkType(String workTypeName) {
+    public AddTagPopUp selectWorkType(String workTypeName) {
         log("Open Work Type menu");
         driver.findElement(By.xpath(WORK_TYPE_FLD.getLocator())).click();
         log("Select [" + workTypeName + "] work type");
         driver.findElement(By.xpath(WORK_TYPE_ITEM.getWorkType(workTypeName))).click();
         log("Click on DONE button");
         driver.findElement(By.xpath(WORK_TYPE_DONE.getLocator())).click();
+        return this;
     }
 }

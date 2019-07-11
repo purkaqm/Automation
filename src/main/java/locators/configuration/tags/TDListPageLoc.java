@@ -9,7 +9,12 @@ public enum TDListPageLoc implements LocatorAble {
 
 
     ADD_NEW_BTN("//input[@value='Add New ']"),
-    TD_NAME("//td[@class='nameColumnValue']//a[contains(text(),'" + SS + "')]")
+    TD_NAME("//td[@class='nameColumnValue']//a[contains(text(),'" + SS + "')]"),
+
+    NAME_TD_FLD("//input[@id='tdName']"),
+    TOP("//a[contains(text(),'Top')]"),
+    TAG_MENU("//select[@id='rsel']"),
+    TAG_NAME("//select[@id='rsel']//option[text()='" + SS + "']"),;
 
 
     ;

@@ -6,15 +6,11 @@
 
     <test name="AutoQA">
 
-        <parameter name="root" value="root"/>
-        <parameter name="tag1" value="tag001"/>
-        <parameter name="tag2" value="tag002"/>
-        <parameter name="tag3" value="tag003"/>
-        <parameter name="tag4" value="tag004"/>
-
-
         <classes>
-            <class name="tests.configuration.tags.SetTagList">
+
+            <class name="tests.configuration.tags.AddRemoveTD">
+                <parameter name="tdName" value="temporaryTD"/>
+                <parameter name="workType" value="GK project"/>
                 <methods>
 
 

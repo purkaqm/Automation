@@ -10,6 +10,7 @@ public class SetTagList extends TestPage {
 
     TagsListPage tagsListPage;
     String[][] data;
+    String workTypeName = "GK project";
 
 
     @Test(dataProvider = "tagFileSource", enabled = true)
@@ -23,7 +24,7 @@ public class SetTagList extends TestPage {
         tagsListPage = new TagsListPage(driver);
         tagsListPage.openPage();
         // create a new tag set, enter name and submit form
-        tagsListPage.addNewTag(rootTag).setName().submitForm();
+        tagsListPage.addNewTag(rootTag).setName().selectWorkType(workTypeName).submitForm();
         // open Grid
         tagsListPage.openPage();
         // enter values
@@ -32,7 +33,7 @@ public class SetTagList extends TestPage {
 
     }
 
-    @Test(dataProvider = "tagFileSource", enabled = true)
+    @Test(dataProvider = "tagFileSource", enabled = false)
     public void removeListOfTags(String rootTag) throws NotLoggedInException {
         login();
         tagsListPage = new TagsListPage(driver);

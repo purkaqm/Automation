@@ -26,7 +26,10 @@ public enum TagsListPageLoc implements LocatorAble {
 
     WORK_TYPE_FLD("//div[@id='workTypesDisp']"),
     WORK_TYPE_ITEM("//input[@name='" + SS + "']"),
-    WORK_TYPE_DONE("//div[@doneid='workTypesDone']")
+    WORK_TYPE_DONE("//div[@doneid='workTypesDone']"),
+
+
+    // ====================   AddTD PopUp
 
     ;
 

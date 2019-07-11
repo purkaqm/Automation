@@ -7,9 +7,8 @@ import pages.exception.NotLoggedInException;
 
 import static locators.configuration.tags.TDListPageLoc.*;
 
-public class TDListPage extends Page {
-
-    public TDListPage(WebDriver driver) {
+public class TDSummary extends Page {
+    public TDSummary(WebDriver driver) {
         super(driver);
     }
 
@@ -20,13 +19,16 @@ public class TDListPage extends Page {
 
     @Override
     public boolean openPage() throws NotLoggedInException {
-        driver.get(context + TD_GRID_PAGE_URL.getLocator());
         return false;
     }
 
-    public AddTDPopUp addTD(String tdName) throws NotLoggedInException {
-        openPage();
-        driver.findElement(By.xpath(ADD_NEW_BTN.getLocator())).click();
-        return new AddTDPopUp(driver, tdName);
+    public void selectRoot(String tagName){
+        log("Click on TOP");
+        driver.findElement(By.xpath(TOP.getLocator())).click();
+        log("Select Tag Name");
+        driver.findElement(By.xpath(TAG_MENU.getLocator())).click();
+
+
+
     }
 }
