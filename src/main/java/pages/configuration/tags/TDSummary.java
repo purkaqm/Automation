@@ -22,13 +22,15 @@ public class TDSummary extends Page {
         return false;
     }
 
-    public void selectRoot(String tagName){
-        log("Click on TOP");
-        driver.findElement(By.xpath(TOP.getLocator())).click();
-        log("Select Tag Name");
-        driver.findElement(By.xpath(TAG_MENU.getLocator())).click();
+    public TDSummary selectRoot(String targetTag, String targetTagValue) {
+        tagUnder("Top", targetTag, targetTagValue);
+        return this;
+    }
+
+    public TDSummary tagUnder(String sourceTagValue, String targetTag, String targetTagValue) {
+        //driver.findElement(By.xpath())
 
 
-
+        return this;
     }
 }

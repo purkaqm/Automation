@@ -11,13 +11,17 @@ public enum TDListPageLoc implements LocatorAble {
     ADD_NEW_BTN("//input[@value='Add New ']"),
     TD_NAME("//td[@class='nameColumnValue']//a[contains(text(),'" + SS + "')]"),
 
+
+    // TD Popup
+
     NAME_TD_FLD("//input[@id='tdName']"),
-    TOP("//a[contains(text(),'Top')]"),
-    TAG_MENU("//select[@id='rsel']"),
-    TAG_NAME("//select[@id='rsel']//option[text()='" + SS + "']"),;
 
+    // TD Summary
 
-    ;
+    SOURCE_TAG_VALUE("//a[contains(text(),'" + SS + "')]"),
+
+    // select tag menu & value
+    TAG_IN_TD("//select[@id='rsel']//option[text()='" + SS + "']"),;
 
     private String locator;
 
@@ -29,4 +33,13 @@ public enum TDListPageLoc implements LocatorAble {
     public String getLocator() {
         return locator;
     }
+
+    public String getTDName(String tagName) {
+        return TD_NAME.getLocator().replace(SS, tagName);
+    }
+
+    // локатор как второй параметр
+
 }
+
+
