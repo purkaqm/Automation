@@ -28,7 +28,14 @@ public class TDSummary extends Page {
     }
 
     public TDSummary tagUnder(String sourceTagValue, String targetTag, String targetTagValue) {
-        //driver.findElement(By.xpath())
+
+        log("Click on TOP menu");
+        driver.findElement(By.xpath("//a[contains(text(),'root 01')]")).click();
+
+        log("Select Source tag > Target Tag set == "+TARGET_TAG.getTargetTag(sourceTagValue, targetTag));
+        driver.findElement(By.xpath(TARGET_TAG.getTargetTag(sourceTagValue, targetTag))).click();
+        log("Select values");
+        pause(3);
 
 
         return this;
