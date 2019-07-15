@@ -18,14 +18,19 @@ public enum TDListPageLoc implements LocatorAble {
 
     // TD Summary
 
-    SOURCE_TAG_VALUE("//a[contains(text(),'" + SS + "')]"),
 
     // select tag menu & value
     SOURCE_TAG_MENU("//a[contains(text(),'" + SS + "')]"),
 
     TARGET_TAG("//select[@id='sel']//option[text()='" + SS + "']"),
+    TARGET_TAG_TOP("//select[@id='rsel']//option[text()='" + SS + "']"),
 
-    TARGET_TAG_VALUE(""),;
+    TAG_VALUE_MENU("//div[@id='AStd_asmultidisp']"),
+    TAG_VALUE("//ul[@id='AStd_asmulti_ul']//label[contains(text(),'" + SS + "')]//preceding::input[1]"),
+    DONE_BTN("//div[@id='AStd_asmultidisp_dropdown']//input[@value='Done']"),
+    CANCEL_BTN("//div[@id='AStd_asmultidisp_dropdown']//input[@value='Cancel']"),
+
+    SUBMIT_BTN("//input[@id='tdeditSubmit']"),;
 
 
     private String locator;

@@ -13,9 +13,9 @@ public class AddRemoveTD extends TestPage {
 
     TDListPage tdListPage;
 
-    @Parameters({"tdName","workType"})
+    @Parameters({"tdName", "workType"})
     @Test(enabled = false)
-    public void addTD(String tdName,String workType) throws NotLoggedInException {
+    public void addTD(String tdName, String workType) throws NotLoggedInException {
         login();
         tdListPage = new TDListPage(driver);
 
@@ -31,7 +31,11 @@ public class AddRemoveTD extends TestPage {
 
         //new TDListPage(driver).openTD(tdName).directEntering();
 
-          new TDListPage(driver).openTD(tdName).tagUnder("root 01","tag001", "some");
+        new TDListPage(driver).openTD(tdName).tagUnder("Top", "root", "root 01")
+                .tagUnder("root 01", "tag001", "green").
+                tagUnder("Top", "root", "root 02").
+                tagUnder("root 02", "tag001", "red")
+        ;
 
     }
 }

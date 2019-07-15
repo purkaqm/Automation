@@ -22,20 +22,38 @@ public class TDSummary extends Page {
         return false;
     }
 
-    public TDSummary selectRoot(String targetTag, String targetTagValue) {
-        tagUnder("Top", targetTag, targetTagValue);
-        return this;
-    }
 
     public TDSummary tagUnder(String sourceTagValue, String targetTag, String targetTagValue) {
 
-        log("Select tag [" + sourceTagValue + "] from the menu");
-        openMenu(sourceTagValue);
+        if (sourceTagValue == "Top") {
+            tagTop(targetTag, targetTagValue);
+
+            selectTagValue(targetTagValue);
+
+            submit();
+            return this;
+        } else {
+
+            log("Select tag [" + sourceTagValue + "] from the menu");
+            openMenu(sourceTagValue);
+
+            log("select new target tag [" + targetTag + "]");
+            selectTagMenu(targetTag);
+
+            selectTagValue(targetTagValue);
+
+            submit();
+
+            return this;
+        }
+    }
+
+    private TDSummary tagTop(String targetTag, String targetTagValue) {
+        log("Select tag [Top] from the menu");
+        openMenu("Top");
 
         log("select new target tag [" + targetTag + "]");
-        selectTagMenu(targetTag);
-
-        pause(5);
+        selectTopTagMenu(targetTag);
 
 
         return this;
@@ -50,17 +68,30 @@ public class TDSummary extends Page {
 
     }
 
+    private void selectTopTagMenu(String tagSetName) {
+        driver.findElement(By.xpath(TARGET_TAG_TOP.getLocator(tagSetName))).click();
+
+    }
+
     private void selectTagValue(String tagValue) {
-        driver.findElement(By.xpath("")).click();
+
+
+        log("Open Tag value menu");
+        driver.findElement(By.xpath(TAG_VALUE_MENU.getLocator())).click();
+
+        log("Select value [" + tagValue + "]");
+        driver.findElement(By.xpath(TAG_VALUE.getLocator(tagValue))).click();
+
+        log("Click DONE");
+        driver.findElement(By.xpath(DONE_BTN.getLocator())).click();
+
     }
 
+    private void submit(){
+        driver.findElement(By.xpath(SUBMIT_BTN.getLocator())).click();
 
-    public void directEntering() {
-        driver.findElement(By.xpath("//a[contains(text(),'Top')]")).click();
-
-        driver.findElement(By.xpath("//select[@id='rsel']//option[text()='tag001']")).click();
-        pause(4);
 
 
     }
+
 }
