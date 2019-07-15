@@ -30,7 +30,9 @@ public class TDSummary extends Page {
     public TDSummary tagUnder(String sourceTagValue, String targetTag, String targetTagValue) {
 
         log("Click on TOP menu");
-        driver.findElement(By.xpath("//a[contains(text(),'root 01')]")).click();
+        pause(3);
+       driver.findElement(By.xpath(SOURCE_TAG_MENU.getSourceTagMenu(sourceTagValue))).click();
+       pause(3);
 
         log("Select Source tag > Target Tag set == "+TARGET_TAG.getTargetTag(sourceTagValue, targetTag));
         driver.findElement(By.xpath(TARGET_TAG.getTargetTag(sourceTagValue, targetTag))).click();
@@ -39,5 +41,16 @@ public class TDSummary extends Page {
 
 
         return this;
+    }
+
+    public void directEntering(){
+        driver.findElement(By.xpath("//a[contains(text(),'Top')]")).click();
+
+        driver.findElement(By.xpath("//a[contains(text(),'Top')]//following::select[1]//option[contains(text(),'tag001')]")).click();
+
+
+
+
+
     }
 }

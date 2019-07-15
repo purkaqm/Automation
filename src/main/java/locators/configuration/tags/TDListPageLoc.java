@@ -23,10 +23,13 @@ public enum TDListPageLoc implements LocatorAble {
     // select tag menu & value
     TAG_IN_TD("//select[@id='rsel']//option[text()='" + SS + "']"),
 
+    SOURCE_TAG_MENU("//a[contains(text(),'" + SS + "')]"),
+
     TARGET_TAG("//a[contains(text(),'" + SS +
             "')]/following::select[1]//option[contains(text(),'" + CC + "')]"),;
 
     // //a[contains(text(),'root 01')]//following::select[1]//option[contains(text(),'tag001')]
+    // //a[contains(text(),'root 01')]/following::select[1]//option[contains(text(),'tag002')]
 
     private String locator;
 
@@ -41,6 +44,10 @@ public enum TDListPageLoc implements LocatorAble {
 
     public String getTDName(String tagName) {
         return TD_NAME.getLocator().replace(SS, tagName);
+    }
+
+    public String getSourceTagMenu(String sourceTag) {
+        return SOURCE_TAG_MENU.getLocator().replace(SS, sourceTag);
     }
 
     public String getTargetTag(String sourceTag, String targetTag) {
