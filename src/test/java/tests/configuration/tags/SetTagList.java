@@ -13,7 +13,7 @@ public class SetTagList extends TestPage {
     String workTypeName = "GK project";
 
 
-    @Test(dataProvider = "tagFileSource", enabled = true)
+    @Test(dataProvider = "tagFileSource", enabled = false)
     public void createRootTag(String rootTag) throws Exception {
 
         String[][] twoColumnsList = new ExcelUtils().getTableArray("source\\" + rootTag + ".xls");
