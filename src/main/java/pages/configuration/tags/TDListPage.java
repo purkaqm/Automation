@@ -36,7 +36,7 @@ public class TDListPage extends Page {
     public TDSummary openTD(String tdName) throws NotLoggedInException {
         openPage();
         log("Open [" + tdName + "] tag dependency");
-        driver.findElement(By.xpath(TD_NAME.getTDName(tdName))).click();
+        driver.findElement(By.xpath(TD_NAME.getLocator(tdName))).click();
 
         return new TDSummary(driver);
     }

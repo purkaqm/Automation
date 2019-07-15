@@ -29,27 +29,37 @@ public class TDSummary extends Page {
 
     public TDSummary tagUnder(String sourceTagValue, String targetTag, String targetTagValue) {
 
-        log("Click on TOP menu");
-        pause(3);
-       driver.findElement(By.xpath(SOURCE_TAG_MENU.getSourceTagMenu(sourceTagValue))).click();
-       pause(3);
+        log("Select tag [" + sourceTagValue + "] from the menu");
+        openMenu(sourceTagValue);
 
-        log("Select Source tag > Target Tag set == "+TARGET_TAG.getTargetTag(sourceTagValue, targetTag));
-        driver.findElement(By.xpath(TARGET_TAG.getTargetTag(sourceTagValue, targetTag))).click();
-        log("Select values");
-        pause(3);
+        log("select new target tag [" + targetTag + "]");
+        selectTagMenu(targetTag);
+
+        pause(5);
 
 
         return this;
     }
 
-    public void directEntering(){
+    private void openMenu(String sourceTagValue) {
+        driver.findElement(By.xpath(SOURCE_TAG_MENU.getLocator(sourceTagValue))).click();
+    }
+
+    private void selectTagMenu(String tagSetName) {
+        driver.findElement(By.xpath(TARGET_TAG.getLocator(tagSetName))).click();
+
+    }
+
+    private void selectTagValue(String tagValue) {
+        driver.findElement(By.xpath("")).click();
+    }
+
+
+    public void directEntering() {
         driver.findElement(By.xpath("//a[contains(text(),'Top')]")).click();
 
-        driver.findElement(By.xpath("//a[contains(text(),'Top')]//following::select[1]//option[contains(text(),'tag001')]")).click();
-
-
-
+        driver.findElement(By.xpath("//select[@id='rsel']//option[text()='tag001']")).click();
+        pause(4);
 
 
     }

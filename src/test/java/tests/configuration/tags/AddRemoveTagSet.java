@@ -8,7 +8,8 @@ import pages.configuration.tags.TagsListPage;
 import pages.exception.NotLoggedInException;
 import tests.TestPage;
 
-public class AddRemoveTagSet extends TestPage {
+public class
+AddRemoveTagSet extends TestPage {
 
     private TagsListPage tagsListPage;
     TagSummary tagSummary;

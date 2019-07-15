@@ -29,9 +29,9 @@ public class AddRemoveTD extends TestPage {
 
         login();
 
-        new TDListPage(driver).openTD(tdName).directEntering();
+        //new TDListPage(driver).openTD(tdName).directEntering();
 
-                // tagUnder("Top","tag001", "some");
+          new TDListPage(driver).openTD(tdName).tagUnder("root 01","tag001", "some");
 
     }
 }
