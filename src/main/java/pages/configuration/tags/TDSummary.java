@@ -25,7 +25,8 @@ public class TDSummary extends Page {
 
     public TDSummary tagUnder(String sourceTagValue, String targetTag, String targetTagValue) {
 
-        if (sourceTagValue == "Top") {
+        if (sourceTagValue.equals("Top")) {
+
             tagTop(targetTag, targetTagValue);
 
             selectTagValue(targetTagValue);
@@ -87,9 +88,8 @@ public class TDSummary extends Page {
 
     }
 
-    private void submit(){
+    private void submit() {
         driver.findElement(By.xpath(SUBMIT_BTN.getLocator())).click();
-
 
 
     }

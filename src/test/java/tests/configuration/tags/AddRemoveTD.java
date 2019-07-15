@@ -23,19 +23,21 @@ public class AddRemoveTD extends TestPage {
 
     }
 
-    @Parameters({"tdName"})
+    @Parameters({"tdName","sourceTagValue", "targetTag", "targetTagValue"})
     @Test(enabled = true)
-    public void updateTD(String tdName) throws NotLoggedInException {
+    public void updateTD(String tdName, String sourceTagValue, String targetTag, String targetTagValue) throws NotLoggedInException {
 
         login();
 
+        new TDListPage(driver).openTD(tdName).tagUnder(sourceTagValue,targetTag,targetTagValue);
+
         //new TDListPage(driver).openTD(tdName).directEntering();
 
-        new TDListPage(driver).openTD(tdName).tagUnder("Top", "root", "root 01")
+        /*new TDListPage(driver).openTD(tdName).tagUnder("Top", "root", "root 01")
                 .tagUnder("root 01", "tag001", "green").
                 tagUnder("Top", "root", "root 02").
                 tagUnder("root 02", "tag001", "red")
-        ;
+        ;*/
 
     }
 }

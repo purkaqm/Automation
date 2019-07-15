@@ -11,6 +11,10 @@
             <class name="tests.configuration.tags.AddRemoveTD">
                 <parameter name="tdName" value="temporaryTD"/>
                 <parameter name="workType" value="GK project"/>
+
+                <parameter name="sourceTagValue" value="Top"/>
+                <parameter name="targetTag" value="root"/>
+                <parameter name="targetTagValue" value="root 01"/>
                 <methods>
 
 
