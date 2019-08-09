@@ -10,29 +10,34 @@ import static locators.project.Project.*;
 public class Project extends Page {
 
 
-    private String projecName = null;
+    private String projectName = null;
     private String projectID = null;
 
     public Project(WebDriver driver) {
         super(driver);
     }
 
+    public Project(WebDriver driver, String projectID) {
+        super(driver);
+        this.projectID = projectID;
+    }
 
-    public String getProjecName() {
+
+    public String getProjectName() {
 
 
-        projecName = driver.findElement(By.xpath(PROJECT_TITLE_FLD.getLocator())).getText();
-        log("Project name is [" + projecName + "]");
+        projectName = driver.findElement(By.xpath(PROJECT_TITLE_FLD.getLocator())).getText();
+        log("Project name is [" + projectName + "]");
 
-        return projecName;
+        return projectName;
     }
 
     public String getProjectID() {
         return projectID;
     }
 
-    public void setProjecName(String projecName) {
-        this.projecName = projecName;
+    public void setProjectName(String projectName) {
+        this.projectName = this.projectName;
     }
 
     public void setProjectID(String projectID) {
@@ -47,6 +52,7 @@ public class Project extends Page {
 
     @Override
     public boolean openPage() throws NotLoggedInException {
+        openProjectByID(projectID);
         return false;
     }
 
@@ -60,6 +66,16 @@ public class Project extends Page {
 
         log("Open project by id [" + projectID + "]");
         driver.get(context + PROJECT_SUMMARY.getLocator() + projectID);
+
+    }
+
+    public ScheduleWgtPage openScheduleWgt() {
+        driver.findElement(By.xpath(EDIT_BTN.getLocator(SCHEDULE_WGT.getLocator()))).click();
+        return new ScheduleWgtPage(driver);
+    }
+
+    public void openConfigurationWgt() {
+        driver.findElement(By.xpath(EDIT_BTN.getLocator(CONFIGURATION_WGT.getLocator()))).click();
 
     }
 }

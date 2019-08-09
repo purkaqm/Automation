@@ -18,6 +18,6 @@ public class PS_20344 extends TestPage {
         project = new Project(driver);
         project.openProjectByID(projectID);
         // get project name
-        project.getProjecName();
+        project.getProjectName();
     }
 }
