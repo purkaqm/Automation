@@ -1,20 +1,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="TestSuite">
-    <parameter name="context" value="https://devxl.psteering.com/pristine_193_305345/"/>
+    <parameter name="context" value="https://devxl.psteering.com/pristine_200_337825/"/>
     <parameter name="visible" value="true"/>
+    <parameter name="projectId" value="1a236pg0000mi3388e2g000000"/>
+
 
 
     <test name="AutoQA">
 
 
         <classes>
-            <class name="tests.project.ProjectSummaryTestPage">
-                <parameter name="projectId" value="1a236p00000mlmerlmfg000000"/>
-                <methods>
 
-
-                </methods>
-            </class>
+            <class name="tests.project.MSTeamsTestPage"/>
         </classes>
 
     </test>

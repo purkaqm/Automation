@@ -14,7 +14,7 @@ public enum CommonLoc implements LocatorAble {
     LEFT_PNL_ADD("//a[contains(@title,'Add')]"),
     LEFT_PNL_REVIEW("//a[contains(@title,'Review')]"),
     LEFT_PNL_ADMIN("//a[contains(@title,'Admin')]"),
-    LEFT_PNL_PROJECT("//a[contains(@title,'Project')]"),
+    LEFT_PNL_PROJECT("//a[contains(@title,'ProjectLoc')]"),
     LEFT_PNL_FAVOR("//div[@id='NavBar']//a[contains(@title,'Favor')]"),
     LEFT_PNL_HISTORY("//a[contains(@title,'History')]"),
     LEFT_PNL_IMPORTANT("//a[contains(@title,'Important')]"),

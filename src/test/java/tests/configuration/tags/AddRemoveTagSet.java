@@ -14,9 +14,9 @@ AddRemoveTagSet extends TestPage {
     private TagsListPage tagsListPage;
     TagSummary tagSummary;
 
-    @Parameters({"workTypeName", "tagName"})
-    @Test(enabled = false)
-    public void testAddNewTagSet(String workTypeName, String tagName) throws NotLoggedInException {
+    @Parameters({"workType", "tagName"})
+    @Test(enabled = true)
+    public void testAddNewTagSet(String workType, String tagName) throws NotLoggedInException {
 
         login();
         tagsListPage = new TagsListPage(driver);
@@ -24,7 +24,7 @@ AddRemoveTagSet extends TestPage {
 
         AddTagPopUp addTagPopUp = tagsListPage.addNewTag(tagName);
         addTagPopUp.setName();
-        addTagPopUp.selectWorkType(workTypeName);
+        addTagPopUp.selectWorkType(workType);
 
         addTagPopUp.submitForm();
 

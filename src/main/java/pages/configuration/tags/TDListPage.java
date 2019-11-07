@@ -26,7 +26,7 @@ public class TDListPage extends Page {
         return false;
     }
 
-    public AddTDPopUp addTD(String tdName) throws NotLoggedInException {
+    public AddTDPopUp clickAddTD(String tdName) throws NotLoggedInException {
         openPage();
         log("Click on ADD new td button");
         driver.findElement(By.xpath(ADD_NEW_BTN.getLocator())).click();
@@ -39,5 +39,15 @@ public class TDListPage extends Page {
         driver.findElement(By.xpath(TD_NAME.getLocator(tdName))).click();
 
         return new TDSummary(driver);
+    }
+
+    public void removeTD(String tdName) throws NotLoggedInException {
+        openPage();
+        log("Remove [" + tdName + "TD, open action menu");
+        driver.findElement(By.xpath(TD_DD_MENU.getLocator(tdName))).click();
+        log("Select delete menu value");
+        driver.findElement(By.xpath(DELETE_MENU_VALUE.getLocator())).click();
+        log("Submit removal");
+        driver.findElement(By.xpath(CONFIRM_YES.getLocator())).click();
     }
 }

@@ -1,7 +1,7 @@
 package tests.configuration.tags;
 
 
-import objects.Project;
+import objects.project.Project;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.exception.NotLoggedInException;

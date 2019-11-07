@@ -5,7 +5,6 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.configuration.tags.TDListPage;
-import pages.configuration.tags.TDSummary;
 import pages.exception.NotLoggedInException;
 import tests.TestPage;
 
@@ -14,20 +13,39 @@ public class AddRemoveTD extends TestPage {
 
     TDListPage tdListPage;
 
+    @Parameters({"tdName","workType"})
+    @Test(enabled = true)
+    public void addSingleTD(String tdName,String workType) throws NotLoggedInException {
+        login();
+
+        tdListPage = new TDListPage(driver);
+        // create td
+        tdListPage.clickAddTD(tdName).setName().selectWorkType(workType).submitForm();
+    }
+
+    @Parameters({"tdName"})
+    @Test(enabled = false)
+    public void removeSingleTD(String tdName) throws NotLoggedInException {
+        login();
+
+        tdListPage = new TDListPage(driver);
+        tdListPage.removeTD(tdName);
+    }
+
     @Parameters({"tdName", "workType"})
     @Test(enabled = false)
     public void addTD(String tdName, String workType) throws NotLoggedInException {
         login();
         tdListPage = new TDListPage(driver);
 
-        tdListPage.addTD(tdName).setName().selectWorkType(workType).submitForm();
+        tdListPage.clickAddTD(tdName).setName().selectWorkType(workType).submitForm();
 
     }
 
     //@Parameters({"tdName", "sourceTagValue", "targetTag", "targetTagValue"})
 
 
-    @Test(enabled = true, dataProvider = "setValues")
+    @Test(enabled = false, dataProvider = "setValues")
     public void updateTD(String tdName, String sourceTagValue, String targetTag, String targetTagValue) throws NotLoggedInException {
 
         login();

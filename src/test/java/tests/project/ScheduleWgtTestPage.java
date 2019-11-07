@@ -1,7 +1,7 @@
 package tests.project;
 
-import objects.Project;
-import objects.ScheduleWgtPage;
+import objects.project.Project;
+import objects.project.ScheduleWgtPage;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.exception.NotLoggedInException;
@@ -13,7 +13,7 @@ public class ScheduleWgtTestPage extends TestPage {
 
 
     @Parameters({"projectId"})
-    @Test
+    @Test(enabled = false)
     public void testOpenConstraintMenu(String projectId) throws NotLoggedInException {
         login();
 
@@ -23,9 +23,11 @@ public class ScheduleWgtTestPage extends TestPage {
         // open Schedule widget
         ScheduleWgtPage schedule = project.openScheduleWgt();
         // open constraint menu
-        schedule.openConstraintTypeMenu();
+        schedule.openConstraintTypeMenu().
+                selectConstraint("Must Start On").
+                setPlannedStartDate("10/10/2019").
+                saveChanges();
         pause(3);
-
 
     }
 }

@@ -26,4 +26,9 @@ public class AddTDPopUp extends AddTagPopUp {
         driver.findElement(By.xpath(NAME_TD_FLD.getLocator())).sendKeys(tagName);
         return this;
     }
+    
+    public void submitForm(){
+        log("Submit TD form");
+        super.submitForm();
+    }
 }

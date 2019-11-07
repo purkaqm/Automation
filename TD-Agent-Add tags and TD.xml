@@ -1,0 +1,32 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestSuite">
+    <parameter name="context" value="https://devxl.psteering.com/pristine_193_305345/"/>
+    <parameter name="visible" value="true"/>
+    <parameter name="workType" value="GK project"/>
+
+
+    <test name="AutoQA">
+
+
+        <parameter name="root" value="Level 1 SPID"/>
+        <parameter name="tag1" value="Level 2 Application name"/>
+        <parameter name="tag2" value="Level 3 SLC Followed 1"/>
+        <parameter name="tag3" value="Level 4 SLC Repository 1"/>
+        <parameter name="tag4" value="Level 5 SQA Responsible 1"/>
+        <parameter name="tdName" value="Application 1"/>
+
+
+        <classes>
+            <class name="tests.configuration.tags.SetTagList">
+                <methods>
+                    <exclude name="removeListOfTags"/>
+
+                </methods>
+
+            </class>
+            <class name="tests.configuration.tags.AddRemoveTD"/>
+
+        </classes>
+
+    </test>
+</suite>

@@ -1,11 +1,12 @@
-package objects;
+package objects.project;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.Page;
+import pages.exception.NoMSTeamsException;
 import pages.exception.NotLoggedInException;
 
-import static locators.project.Project.*;
+import static locators.project.ProjectLoc.*;
 
 public class Project extends Page {
 
@@ -27,7 +28,7 @@ public class Project extends Page {
 
 
         projectName = driver.findElement(By.xpath(PROJECT_TITLE_FLD.getLocator())).getText();
-        log("Project name is [" + projectName + "]");
+        log("ProjectLoc name is [" + projectName + "]");
 
         return projectName;
     }
@@ -69,6 +70,11 @@ public class Project extends Page {
 
     }
 
+    public ProjectEditDetails openEditDetails() {
+        driver.findElement(By.xpath(EDIT_DETAILS_BTN.getLocator())).click();
+        return new ProjectEditDetails(driver);
+    }
+
     public ScheduleWgtPage openScheduleWgt() {
         driver.findElement(By.xpath(EDIT_BTN.getLocator(SCHEDULE_WGT.getLocator()))).click();
         return new ScheduleWgtPage(driver);
@@ -77,5 +83,29 @@ public class Project extends Page {
     public void openConfigurationWgt() {
         driver.findElement(By.xpath(EDIT_BTN.getLocator(CONFIGURATION_WGT.getLocator()))).click();
 
+    }
+
+    public MSTeams openMSTeams() throws NotLoggedInException, NoMSTeamsException {
+   //     openPage();
+        checkMSTeams();
+
+        log("Click on MS Teams button");
+
+               driver.findElement(By.xpath(MSTEAMS_BTN.getLocator())).click();
+
+        return new MSTeams(driver);
+    }
+
+    boolean checkMSTeams() throws NoMSTeamsException {
+        try {
+            driver.findElement(By.xpath(MSTEAMS_BTN.getLocator())).isDisplayed();
+        } catch (Exception e) {
+            throw new NoMSTeamsException("MS teams button is NOT found!");
+        }
+        return true;
+    }
+
+    public OwnerShipDialog setOwnerShip(String owner){
+        return new OwnerShipDialog(owner);
     }
 }

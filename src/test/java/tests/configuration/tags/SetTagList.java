@@ -1,6 +1,7 @@
 package tests.configuration.tags;
 
 import org.testng.annotations.*;
+import pages.configuration.tags.TDListPage;
 import pages.configuration.tags.TagsListPage;
 import pages.exception.NotLoggedInException;
 import tests.TestPage;
@@ -10,13 +11,13 @@ public class SetTagList extends TestPage {
 
     TagsListPage tagsListPage;
     String[][] data;
-    String workTypeName = "GK project";
+    String workType = "GK project";
 
 
-    @Test(dataProvider = "tagFileSource", enabled = false)
-    public void createRootTag(String rootTag) throws Exception {
+    @Test(dataProvider = "tagFileSource", enabled = true)
+    public void createRootTag(String tag) throws Exception {
 
-        String[][] twoColumnsList = new ExcelUtils().getTableArray("source\\" + rootTag + ".xls");
+        String[][] twoColumnsList = new ExcelUtils().getTableArray("source\\" + tag + ".xls");
 
 
         login();
@@ -24,22 +25,21 @@ public class SetTagList extends TestPage {
         tagsListPage = new TagsListPage(driver);
         tagsListPage.openPage();
         // create a new tag set, enter name and submit form
-        tagsListPage.addNewTag(rootTag).setName().selectWorkType(workTypeName).submitForm();
+        tagsListPage.addNewTag(tag).setName().selectWorkType(workType).submitForm();
         // open Grid
         tagsListPage.openPage();
         // enter values
-        tagsListPage.addTagSetValues(twoColumnsList, rootTag);
+        tagsListPage.addTagSetValues(twoColumnsList, tag);
 
 
     }
 
-    @Test(dataProvider = "tagFileSource", enabled = false)
+    @Test(dataProvider = "tagFileSource", enabled = true)
     public void removeListOfTags(String rootTag) throws NotLoggedInException {
         login();
-        tagsListPage = new TagsListPage(driver);
-        tagsListPage.openPage();
-        tagsListPage.removeTagSet(rootTag);
-
+        TDListPage tdListPage = new TDListPage(driver);
+        tdListPage.openPage();
+        tdListPage.removeTD(rootTag);
     }
 
     @Parameters({"root", "tag1", "tag2", "tag3", "tag4"})

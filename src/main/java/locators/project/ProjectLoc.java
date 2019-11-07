@@ -2,12 +2,15 @@ package locators.project;
 
 import locators.LocatorAble;
 
-public enum Project implements LocatorAble {
+public enum ProjectLoc implements LocatorAble {
 
     // common
 
     PROJECT_SUMMARY("project/Summary1.epage?sp=U"),
     PROJECT_TITLE_FLD("//h2[@id='project-summary-name']//div[@class='editable-field-wrapper']"),
+    EDIT_DETAILS_BTN("//button[contains(text(),'Edit All Details')]"),
+
+    MSTEAMS_BTN("//button[contains(@class,'ms-teams')]"),
 
     // widgets
 
@@ -20,7 +23,7 @@ public enum Project implements LocatorAble {
 
     private String locator;
 
-    Project(String locator) {
+    ProjectLoc(String locator) {
         this.locator = locator;
     }
 

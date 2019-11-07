@@ -1,6 +1,6 @@
 package tests.project;
 
-import objects.Project;
+import objects.project.Project;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.exception.NotLoggedInException;
@@ -11,7 +11,7 @@ public class ProjectSummaryTestPage extends TestPage {
     Project project;
 
     @Parameters({"projectId"})
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void openScheduleWidget(String projectId) throws NotLoggedInException {
         login();
         project = new Project(driver);
@@ -23,7 +23,7 @@ public class ProjectSummaryTestPage extends TestPage {
     }
 
     @Parameters({"projectId"})
-    @Test
+    @Test(enabled = false)
     public void openConfigurationWidget(String projectId) throws NotLoggedInException {
         login();
         project = new Project(driver,projectId);
